@@ -1,63 +1,395 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benjamin Hocq</title>
-  <meta name="description" content="Benjamin Hocq" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benjamin Hocq — Graphic Designer</title>
+  <meta name="description" content="Portfolio de Benjamin Hocq, Graphic Designer & Vidéaste basé dans le canton de Vaud.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/image-slot.js"></script>
 </head>
 <body>
 
-  <nav>
-    <a href="/" class="nav-logo">Benjamin Hocq</a>
-    <ul class="nav-links">
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#work">Travaux</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- ════════════ LEFT NAV (persistent) ════════════ -->
+  <nav class="nav" aria-label="Navigation">
+    <a data-view="accueil" class="active" aria-label="Accueil">
+      <span class="tip">Accueil</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/></svg>
+    </a>
+    <a data-view="profil" aria-label="Profil">
+      <span class="tip">Profil · CV</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-5.5 7-5.5s7 1.9 7 5.5"/></svg>
+    </a>
+    <a data-view="projets" aria-label="Projets">
+      <span class="tip">Projets</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>
+    </a>
+    <a data-view="contact" aria-label="Contact">
+      <span class="tip">Contact</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+    </a>
   </nav>
 
-  <main>
+  <div class="app">
 
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Benjamin<br>Hocq</h1>
-        <p>Titre / accroche à définir.</p>
+    <!-- ════════════════════ ACCUEIL ════════════════════ -->
+    <section class="view is-active" id="view-accueil">
+      <div class="feed">
+
+        <!-- HERO -->
+        <div class="hero" data-screen-label="Accueil">
+          <image-slot id="avatar" class="avatar" shape="rounded" radius="24" placeholder="Photo"></image-slot>
+          <h1>Salut, moi c'est Benjamin <span class="wave">👋</span></h1>
+          <p class="sub" id="hero-sub">Graphic designer &amp; vidéaste, basé dans le canton de Vaud.</p>
+          <p class="body">
+            Actif dans le canton de Vaud depuis plus de 2 ans, j'y emménage définitivement
+            ces prochaines semaines. Actuellement <b>graphiste-vidéaste</b> pour un média
+            lausannois, j'allie maîtrise technique et valorisation de contenu. Je souhaite
+            aujourd'hui m'investir pleinement dans de <b>nouveaux projets locaux</b>, avec un
+            engagement réel et durable.
+          </p>
+          <button class="btn" data-view="contact"><span id="hero-btn-text">Me contacter</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+
+        <!-- PARCOURS (carousel) -->
+        <div class="block" id="blk-parcours">
+          <h2 class="sec-title">Parcours</h2>
+          <p class="sec-lead">Là où j'ai exercé ces dernières années.</p>
+          <div class="carousel">
+            <div class="slides">
+
+              <div class="slide is-active">
+                <image-slot id="work-viva" placeholder="Visuel — VIVA Santé"></image-slot>
+                <div class="work-meta">
+                  <div class="work-logo">V</div>
+                  <div class="work-info">
+                    <div class="wt">VIVA Santé — Lausanne <span>Depuis fév. 2024</span></div>
+                    <div class="wr">Graphiste · Vidéaste</div>
+                  </div>
+                  <div class="car-nav">
+                    <button class="car-btn" data-car="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+                    <button class="car-btn" data-car="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+                <p class="work-desc">Montage de vidéos marketing, mise en page de livres éditoriaux, direction et organisation du pôle création, pilotage de la chaîne graphique et création de visuels promotionnels.</p>
+              </div>
+
+              <div class="slide">
+                <image-slot id="work-indep" placeholder="Visuel — Indépendant"></image-slot>
+                <div class="work-meta">
+                  <div class="work-logo">I</div>
+                  <div class="work-info">
+                    <div class="wt">Indépendant — Annecy, Nyon &amp; Genève <span>2023 – 2024</span></div>
+                    <div class="wr">Graphiste · Web Design</div>
+                  </div>
+                  <div class="car-nav">
+                    <button class="car-btn" data-car="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+                    <button class="car-btn" data-car="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+                <p class="work-desc">Développement de sites web, création d'identités de marque et de divers supports de communication, web comme print.</p>
+              </div>
+
+              <div class="slide">
+                <image-slot id="work-lakepub" placeholder="Visuel — Lake Pub"></image-slot>
+                <div class="work-meta">
+                  <div class="work-logo">L</div>
+                  <div class="work-info">
+                    <div class="wt">Lake Pub — Sevrier <span>2021 – 2023</span></div>
+                    <div class="wr">Assistant direction artistique</div>
+                  </div>
+                  <div class="car-nav">
+                    <button class="car-btn" data-car="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+                    <button class="car-btn" data-car="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
+                  </div>
+                </div>
+                <p class="work-desc">Réalisation et évolution de l'identité visuelle, supports de communication, promotion d'évènements sur les réseaux et conception d'interfaces web &amp; mobiles.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJETS (aperçu) -->
+        <div class="block" id="blk-projets">
+          <h2 class="sec-title">Projets</h2>
+          <p class="sec-lead">Une sélection de réalisations récentes.</p>
+          <div class="list">
+            <div class="list-row" data-project="sublizme">
+              <div class="list-ic">S</div>
+              <div class="list-tx"><div class="lt">Sublizme</div><div class="ld">Identité · UI</div></div>
+              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </div>
+            <div class="list-row" data-project="ma-dose-crea">
+              <div class="list-ic">M</div>
+              <div class="list-tx"><div class="lt">Ma dose créa</div><div class="ld">Direction artistique · Web</div></div>
+              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </div>
+            <div class="list-row" data-project="elevet">
+              <div class="list-ic">E</div>
+              <div class="list-tx"><div class="lt">ELEVET</div><div class="ld">Produit · Prototype</div></div>
+              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+            </div>
+          </div>
+          <div class="more"><a data-view="projets">Voir tous les projets
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+
+        <!-- TÉMOIGNAGES -->
+        <div class="block" id="blk-testi">
+          <h2 class="sec-title">Ils en parlent</h2>
+          <p class="sec-lead">Quelques retours de personnes avec qui j'ai collaboré.</p>
+          <div class="testi-scroll">
+            <article class="testi">
+              <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
+              <div class="ta"><image-slot id="testi-1" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
+            </article>
+            <article class="testi">
+              <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
+              <div class="ta"><image-slot id="testi-2" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
+            </article>
+            <article class="testi">
+              <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
+              <div class="ta"><image-slot id="testi-3" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
+            </article>
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="socials">
+            <a class="soc-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+            <a class="soc-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
+            <a class="soc-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 8.5h2V5.5h-2.4C12.9 5.5 12 6.9 12 8.7V10H9.8v3H12v8h3v-8h2.3l.4-3H15v-1.2c0-.7.2-1.3 1.3-1.3z"/></svg></a>
+          </div>
+          <div class="signature">Benjamin Hocq</div>
+          <p class="thanks">Merci de votre visite.</p>
+          <p class="bye">Explorez à votre rythme. À très vite.</p>
+          <p class="copy">© 2026 Benjamin Hocq</p>
+        </footer>
+
       </div>
     </section>
 
-    <section id="about">
-      <p class="section-label">À propos</p>
-      <div class="reveal">
-        <p>Texte à venir.</p>
+    <!-- ════════════════════ PROFIL / CV ════════════════════ -->
+    <section class="view" id="view-profil">
+      <div class="feed" data-screen-label="Profil">
+
+        <div class="profil-head">
+          <image-slot id="ph-avatar" class="ph-avatar" shape="rounded" radius="20" placeholder="Photo"></image-slot>
+          <div class="ph-info">
+            <h1>Benjamin Hocq</h1>
+            <p class="role">Graphic Designer</p>
+            <div class="contact-grid">
+              <a href="mailto:benjamin.hocq@outlook.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg> benjamin.hocq@outlook.com</a>
+              <a href="tel:+33788310031"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +33 7 88 31 00 31</a>
+              <a href="https://www.benjaminhocq.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> www.benjaminhocq.com</a>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Route de Lausanne 5, 1180 Rolle</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="M7 9h4M7 13h7"/></svg> Permis B</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="block" style="margin-top:48px">
+          <p class="cv-label">À propos</p>
+          <p class="about">Actif dans le canton de Vaud depuis plus de 2 ans, j'y emménage définitivement ces prochaines semaines. Actuellement graphiste-vidéaste pour un média lausannois, j'allie maîtrise technique et valorisation de contenu. Je souhaite aujourd'hui m'investir pleinement dans de nouveaux projets locaux avec un engagement réel et durable.</p>
+        </div>
+
+        <div class="block">
+          <p class="cv-label">Expériences</p>
+          <div class="entry">
+            <span class="e-title">VIVA Santé — Lausanne</span>
+            <span class="e-org">Graphiste · Vidéaste</span>
+            <span class="e-date">Depuis fév. 2024</span>
+            <span class="e-desc">Montage de vidéos marketing. Mise en page de livres éditoriaux. Direction et organisation du pôle création. Pilotage de la chaîne graphique. Création de visuels promotionnels.</span>
+          </div>
+          <div class="entry">
+            <span class="e-title">Indépendant — Annecy, Nyon &amp; Genève</span>
+            <span class="e-org">Graphiste · Web Design</span>
+            <span class="e-date">2023 – 2024</span>
+            <span class="e-desc">Développement de sites web. Création d'identité de marque. Création de divers supports de communication web et print.</span>
+          </div>
+          <div class="entry">
+            <span class="e-title">Lake Pub — Sevrier</span>
+            <span class="e-org">Assistant direction artistique</span>
+            <span class="e-date">2021 – 2023</span>
+            <span class="e-desc">Réalisation et évolution de l'identité visuelle. Création de supports de communication visuelle. Promotion d'évènements sur les réseaux sociaux. Conception d'interfaces web et mobiles intuitives. Participation à la stratégie de développement de l'entreprise.</span>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="cv-label">Formations</p>
+          <div class="entry">
+            <span class="e-title">Bachelor design interactif web &amp; mobile</span>
+            <span class="e-org">Les Gobelins</span>
+            <span class="e-date">2020 – 2023</span>
+          </div>
+          <div class="entry">
+            <span class="e-title">BTS Négociation et Relation Client</span>
+            <span class="e-org">Gaspard Monge</span>
+            <span class="e-date">2016 – 2018</span>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="cv-label">Compétences</p>
+          <div class="chips">
+            <span class="chip">Design graphique</span>
+            <span class="chip">Outils CRM</span>
+            <span class="chip">Web Design</span>
+            <span class="chip">UX &amp; UI Design</span>
+            <span class="chip">IA générative</span>
+            <span class="chip">Gestion de projet</span>
+            <span class="chip">Marketing digital</span>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="cv-label">Outils</p>
+          <div class="tools">
+            <span class="tool">Ps</span><span class="tool">Ai</span><span class="tool">Pr</span>
+            <span class="tool">Ae</span><span class="tool">Id</span><span class="tool">Sf</span>
+            <span class="tool">Cv</span><span class="tool">Fi</span><span class="tool">Wp</span>
+            <span class="tool" style="font-size:11px">HTML</span>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="cv-label">Langues</p>
+          <div class="kv"><b>Français</b> Maternelle</div>
+          <div class="kv"><b>Anglais</b> Intermédiaire</div>
+        </div>
+
+        <div class="block">
+          <p class="cv-label">Hobbies</p>
+          <p class="about">Activités outdoor · Investissement &amp; immobilier · Innovation technologique · Arts visuels</p>
+        </div>
+
+        <div class="block">
+          <a class="btn" href="assets/Benjamin Hocq - CV.pdf" download>Télécharger le CV
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg>
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <section id="work">
-      <p class="section-label">Travaux</p>
-      <div class="reveal">
-        <p>Projets à venir.</p>
+    <!-- ════════════════════ PROJETS ════════════════════ -->
+    <section class="view" id="view-projets">
+      <div class="feed" data-screen-label="Projets">
+        <h2 class="sec-title">Projets</h2>
+        <p class="sec-lead">Voici quelques projets qui illustrent mon travail. Il y en a d'autres — j'ai gardé une sélection pour rester clair et concis.</p>
+
+        <div class="proj-cards">
+          <article class="proj-card" data-project="sublizme">
+            <image-slot id="card-sublizme" placeholder="Visuel"></image-slot>
+            <div class="pc-body">
+              <h3>Sublizme</h3>
+              <p>Une courte phrase sur le projet : ce que c'était, votre rôle, le résultat.</p>
+              <div class="pc-meta">Identité · UI — 2025</div>
+            </div>
+          </article>
+          <article class="proj-card" data-project="ma-dose-crea">
+            <image-slot id="card-madosecrea" placeholder="Visuel"></image-slot>
+            <div class="pc-body">
+              <h3>Ma dose créa</h3>
+              <p>Une courte phrase sur le projet : ce que c'était, votre rôle, le résultat.</p>
+              <div class="pc-meta">Direction artistique · Web — 2024</div>
+            </div>
+          </article>
+          <article class="proj-card" data-project="elevet">
+            <image-slot id="card-elevet" placeholder="Visuel"></image-slot>
+            <div class="pc-body">
+              <h3>ELEVET</h3>
+              <p>Une courte phrase sur le projet : ce que c'était, votre rôle, le résultat.</p>
+              <div class="pc-meta">Produit · Prototype — 2024</div>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="contact">
-      <p class="section-label">Contact</p>
-      <div class="reveal">
-        <p>Informations de contact à venir.</p>
+    <!-- ════════════════════ PROJET — détail ════════════════════ -->
+    <section class="view" id="view-projet">
+      <div class="feed" data-screen-label="Fiche projet">
+        <div class="detail-top">
+          <button class="back-btn" data-back aria-label="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+          <span class="dt-label">Projets</span>
+        </div>
+        <article class="detail-card">
+          <p class="dc-cat"><span id="pd-cat">Projet</span><span id="pd-date">2025</span></p>
+          <h1 id="pd-title">Sublizme</h1>
+          <p class="dc-body" id="pd-lead">Description du projet…</p>
+          <div id="pd-image-holder"><image-slot id="pd-img-sublizme" placeholder="Visuel"></image-slot></div>
+          <p class="dc-body">Espace réservé au contenu détaillé du projet : contexte, démarche, rôle, livrables et résultats. Tu pourras remplacer ce texte et déposer tes visuels.</p>
+        </article>
       </div>
     </section>
 
-  </main>
+    <!-- ════════════════════ CONTACT ════════════════════ -->
+    <section class="view" id="view-contact">
+      <div class="feed" data-screen-label="Contact">
+        <h2 class="sec-title">Contact</h2>
+        <p class="sec-lead">Un projet, une question, ou juste envie de dire bonjour ? Écrivez-moi.</p>
 
-  <footer>
-    <span>© 2026 Benjamin Hocq</span>
-    <span>benjaminhocq.com</span>
-  </footer>
+        <div class="links">
+          <a class="link-row" href="mailto:benjamin.hocq@outlook.com">
+            <span class="lr-k">Email</span>
+            <span class="lr-v">benjamin.hocq@outlook.com <span class="arr">↗</span></span>
+          </a>
+          <a class="link-row" href="tel:+33788310031">
+            <span class="lr-k">Téléphone</span>
+            <span class="lr-v">+33 7 88 31 00 31 <span class="arr">↗</span></span>
+          </a>
+          <a class="link-row" href="https://www.benjaminhocq.com" target="_blank" rel="noopener">
+            <span class="lr-k">Site web</span>
+            <span class="lr-v">www.benjaminhocq.com <span class="arr">↗</span></span>
+          </a>
+          <a class="link-row" href="#">
+            <span class="lr-k">LinkedIn</span>
+            <span class="lr-v">Benjamin Hocq <span class="arr">↗</span></span>
+          </a>
+        </div>
 
-  <script src="assets/js/main.js"></script>
+        <form class="form" id="contact-form">
+          <div class="row2">
+            <div class="field"><label>Nom</label><input type="text" name="name" placeholder="Votre nom" required></div>
+            <div class="field"><label>Email</label><input type="email" name="email" placeholder="vous@email.com" required></div>
+          </div>
+          <div class="field"><label>Message</label><textarea name="message" placeholder="Parlez-moi de votre projet…" required></textarea></div>
+          <button type="submit" class="btn send">Envoyer
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <p class="sent-msg" id="form-sent">Merci ! Votre message a bien été envoyé.</p>
+        </form>
+
+        <footer class="footer">
+          <div class="socials">
+            <a class="soc-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
+            <a class="soc-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
+            <a class="soc-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 8.5h2V5.5h-2.4C12.9 5.5 12 6.9 12 8.7V10H9.8v3H12v8h3v-8h2.3l.4-3H15v-1.2c0-.7.2-1.3 1.3-1.3z"/></svg></a>
+          </div>
+          <div class="signature">Benjamin Hocq</div>
+          <p class="thanks">Merci de votre visite.</p>
+          <p class="bye">Explorez à votre rythme. À très vite.</p>
+          <p class="copy">© 2026 Benjamin Hocq</p>
+        </footer>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ════════════ Progressive blur ════════════ -->
+  <div class="blur-fade" aria-hidden="true">
+    <div class="b1"></div><div class="b2"></div><div class="b3"></div><div class="b4"></div><div class="tint"></div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
