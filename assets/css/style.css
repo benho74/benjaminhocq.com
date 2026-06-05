@@ -41,8 +41,36 @@ body, .nav, .btn, .set-row, .seg, .seg-btn, .player, .testi, .proj-card, .logo-c
 }
 
 /* ── Curseur global ──────────────────────── */
-:root[data-cursor="pointer"], :root[data-cursor="pointer"] *{ cursor: pointer !important; }
 :root[data-cursor="default"]{ cursor: default; }
+
+/* Curseur "main 3D" — élément DOM animé qui suit la souris.
+   On masque le curseur natif PARTOUT (y compris sliders) pour éviter
+   qu'il réapparaisse sur certains éléments. */
+:root[data-cursor="threed"], :root[data-cursor="threed"] *{ cursor: none !important; }
+/* Le sélecteur * n'atteint pas les pseudo-éléments — on masque aussi le curseur
+   sur les pouces/pistes des sliders (sinon le curseur natif réapparaît dessus). */
+:root[data-cursor="threed"] input[type="range"]::-webkit-slider-thumb{ cursor: none !important; }
+:root[data-cursor="threed"] input[type="range"]::-webkit-slider-runnable-track{ cursor: none !important; }
+:root[data-cursor="threed"] input[type="range"]::-moz-range-thumb{ cursor: none !important; }
+:root[data-cursor="threed"] input[type="range"]::-moz-range-track{ cursor: none !important; }
+
+.cursor3d{
+  position: fixed; left: 0; top: 0; z-index: 9999; pointer-events: none;
+  opacity: 0; transition: opacity .18s ease; will-change: transform;
+}
+.cursor3d-emo{
+  display: block; font-size: 26px; line-height: 1; transform: translate(-6px, -4px);
+  filter: drop-shadow(0 3px 4px rgba(0,0,0,.4));
+}
+/* la main "bouge un peu" : léger balancement (effet salut sans les ondes) */
+.cursor3d-emo::after{ content: "✋"; display: block; animation: handwave 2.2s ease-in-out infinite; transform-origin: 60% 85%; }
+.cursor3d.is-click .cursor3d-emo{ transform: translate(-9px, -2px); }
+.cursor3d.is-click .cursor3d-emo::after{ content: "👆"; animation: handpoint 1s ease-in-out infinite; }
+@keyframes handwave{ 0%,100%{ transform: rotate(-10deg); } 50%{ transform: rotate(10deg); } }
+@keyframes handpoint{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-3px); } }
+@media (prefers-reduced-motion: reduce){
+  .cursor3d-emo::after{ animation: none; }
+}
 
 /* ── Apparitions au scroll (style Framer) ── */
 .reveal{
