@@ -44,8 +44,19 @@ body, .nav, .btn, .set-row, .seg, .seg-btn, .player, .testi, .proj-card, .logo-c
 :root[data-cursor="pointer"], :root[data-cursor="pointer"] *{ cursor: pointer !important; }
 :root[data-cursor="default"]{ cursor: default; }
 
+/* ── Apparitions au scroll (style Framer) ── */
+.reveal{
+  opacity: 0; transform: translateY(56px);
+  transition: opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.reveal.is-in{ opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity: 1; transform: none; transition: none; }
+}
+
 *{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior: auto; }
 html,body{ margin:0; padding:0; }
 body{
   background: var(--bg);
@@ -73,12 +84,13 @@ button{ font-family: inherit; }
   max-width: var(--col); margin: 0 auto;
   padding: clamp(64px, 12vh, 130px) 24px 260px;
   transition: max-width .35s var(--ease);
+  container-type: inline-size;
 }
 
 /* ── Section primitives ─────────────────── */
 .block{ margin-top: clamp(64px, 11vh, 120px); }
-.sec-title{ font-size: 26px; font-weight: 700; letter-spacing: -0.025em; margin: 0 0 8px; }
-.sec-lead{ color: var(--muted); font-size: 16px; line-height: 1.6; margin: 0 0 30px; max-width: 56ch; }
+.sec-title{ font-size: clamp(24px, 3.4cqi, 30px); font-weight: 700; letter-spacing: -0.025em; margin: 0 0 8px; }
+.sec-lead{ color: var(--muted); font-size: clamp(15px, 2.2cqi, 18px); line-height: 1.6; margin: 0 0 30px; max-width: 56ch; }
 
 /* ── Buttons ────────────────────────────── */
 .btn{
@@ -99,13 +111,13 @@ button{ font-family: inherit; }
   background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
 }
 .hero h1{
-  font-size: clamp(32px, 4.6vw, 44px); font-weight: 700; line-height: 1.05;
+  font-size: clamp(32px, 6.3cqi, 54px); font-weight: 700; line-height: 1.05;
   letter-spacing: -0.03em; margin: 0;
 }
 .hero .wave{ display:inline-block; transform-origin: 70% 70%; }
-.hero .sub{ color: var(--muted); font-size: 18px; margin: 14px 0 0; }
+.hero .sub{ color: var(--muted); font-size: clamp(17px, 2.6cqi, 21px); margin: 14px 0 0; }
 .hero .body{
-  color: var(--muted); font-size: 17px; line-height: 1.62; margin: 24px 0 0; max-width: 60ch;
+  color: var(--muted); font-size: clamp(16px, 2.4cqi, 19px); line-height: 1.62; margin: 24px 0 0;
 }
 .hero .body b{ color: var(--text); font-weight: 600; }
 .hero .btn{ margin-top: 50px; }
@@ -118,7 +130,7 @@ button{ font-family: inherit; }
   color: var(--faint); margin: 0 0 14px;
 }
 .sec-title-lg{
-  font-size: clamp(28px, 4vw, 38px); font-weight: 700; letter-spacing: -0.03em;
+  font-size: clamp(26px, 4.6cqi, 42px); font-weight: 700; letter-spacing: -0.03em;
   line-height: 1.12; margin: 0 0 28px; max-width: 22ch;
 }
 
@@ -139,8 +151,7 @@ button{ font-family: inherit; }
 
 /* ── Bio text ── */
 .bio-text{
-  color: var(--muted); font-size: 17px; line-height: 1.7; margin: 0 0 18px;
-  max-width: 60ch;
+  color: var(--muted); font-size: clamp(16px, 2.4cqi, 19px); line-height: 1.7; margin: 0 0 18px;
 }
 .bio-text b{ color: var(--text); font-weight: 600; }
 
