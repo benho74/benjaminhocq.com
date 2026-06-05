@@ -9,6 +9,7 @@
     profil:   document.getElementById('view-profil'),
     projets:  document.getElementById('view-projets'),
     contact:  document.getElementById('view-contact'),
+    parametres: document.getElementById('view-parametres'),
     projet:   document.getElementById('view-projet')
   };
   var navLinks = {};
