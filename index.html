@@ -9,6 +9,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sacramento&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    /* Applique thème / largeur / curseur avant le rendu (anti-flash) */
+    (function(){
+      try{
+        var s = JSON.parse(localStorage.getItem("bh-settings") || "{}");
+        var r = document.documentElement;
+        r.setAttribute("data-theme", s.theme || "dark");
+        r.setAttribute("data-cursor", s.cursor || "default");
+        if (s.lang) r.setAttribute("lang", s.lang);
+        if (s.width) r.style.setProperty("--col", s.width + "px");
+      }catch(e){}
+    })();
+  </script>
   <script src="assets/js/image-slot.js"></script>
 </head>
 <body>
@@ -16,20 +29,24 @@
   <!-- ════════════ LEFT NAV (persistent) ════════════ -->
   <nav class="nav" aria-label="Navigation">
     <a data-view="accueil" class="active" aria-label="Accueil">
-      <span class="tip">Accueil</span>
+      <span class="tip" data-i18n="nav.home">Accueil</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/></svg>
     </a>
     <a data-view="profil" aria-label="Profil">
-      <span class="tip">Profil · CV</span>
+      <span class="tip" data-i18n="nav.profile">Profil · CV</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-5.5 7-5.5s7 1.9 7 5.5"/></svg>
     </a>
     <a data-view="projets" aria-label="Projets">
-      <span class="tip">Projets</span>
+      <span class="tip" data-i18n="nav.projects">Projets</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>
     </a>
     <a data-view="contact" aria-label="Contact">
-      <span class="tip">Contact</span>
+      <span class="tip" data-i18n="nav.contact">Contact</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+    </a>
+    <a data-view="parametres" aria-label="Paramètres">
+      <span class="tip" data-i18n="nav.settings">Paramètres</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
     </a>
   </nav>
 
@@ -374,6 +391,102 @@
       </div>
     </section>
 
+    <!-- ════════════════════ PARAMÈTRES ════════════════════ -->
+    <section class="view" id="view-parametres">
+      <div class="feed" data-screen-label="Paramètres">
+        <h2 class="sec-title" data-i18n="settings.title">Paramètres</h2>
+        <p class="sec-lead" data-i18n="settings.lead">Personnalisez votre expérience. Vos réglages sont enregistrés automatiquement.</p>
+
+        <!-- Apparence -->
+        <div class="set-group">
+          <p class="set-label" data-i18n="settings.appearance">Apparence</p>
+          <div class="set-row">
+            <div class="set-info">
+              <span class="set-name" data-i18n="settings.theme">Thème</span>
+              <span class="set-desc" data-i18n="settings.theme.desc">Basculer entre le mode sombre et le mode clair.</span>
+            </div>
+            <div class="seg" id="seg-theme" role="group" aria-label="Thème">
+              <button class="seg-btn" data-theme-val="light">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+                <span data-i18n="settings.light">Clair</span>
+              </button>
+              <button class="seg-btn" data-theme-val="dark">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                <span data-i18n="settings.dark">Sombre</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="set-row">
+            <div class="set-info">
+              <span class="set-name" data-i18n="settings.lang">Langue</span>
+              <span class="set-desc" data-i18n="settings.lang.desc">Langue d'affichage du site.</span>
+            </div>
+            <div class="seg" id="seg-lang" role="group" aria-label="Langue">
+              <button class="seg-btn" data-lang-val="fr">FR</button>
+              <button class="seg-btn" data-lang-val="en">EN</button>
+            </div>
+          </div>
+
+          <div class="set-row">
+            <div class="set-info">
+              <span class="set-name" data-i18n="settings.width">Largeur de la page</span>
+              <span class="set-desc"><span data-i18n="settings.width.desc">Ajuster la largeur du contenu.</span> <b id="width-val">680px</b></span>
+            </div>
+            <input type="range" id="width-range" class="set-range" min="560" max="960" step="20" value="680">
+          </div>
+
+          <div class="set-row">
+            <div class="set-info">
+              <span class="set-name" data-i18n="settings.cursor">Curseur</span>
+              <span class="set-desc" data-i18n="settings.cursor.desc">Choisir l'icône du curseur sur tout le site.</span>
+            </div>
+            <div class="seg" id="seg-cursor" role="group" aria-label="Curseur">
+              <button class="seg-btn" data-cursor-val="default" aria-label="Curseur classique">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 3l14 7-6 1.5L9.5 18z"/></svg>
+              </button>
+              <button class="seg-btn" data-cursor-val="pointer" aria-label="Curseur main">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11V5.5a1.5 1.5 0 0 1 3 0V11m0-1.5a1.5 1.5 0 0 1 3 0V11m0-1a1.5 1.5 0 0 1 3 0v1m0 0a1.5 1.5 0 0 1 3 0v3.5a5.5 5.5 0 0 1-5.5 5.5h-1.7a4 4 0 0 1-3-1.35L6 16.5c-1-1.2-1.8-2-2.3-3a1.4 1.4 0 0 1 2-1.9L8 13"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Musique -->
+        <div class="set-group">
+          <p class="set-label" data-i18n="settings.music">Musique d'ambiance</p>
+          <div class="player">
+            <button class="player-side" id="music-prev" aria-label="Piste précédente">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 5v14l-9-7zM8 5H5.6v14H8z"/></svg>
+            </button>
+            <button class="player-play" id="music-toggle" aria-label="Lecture / Pause">
+              <svg class="ic-play" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5v14l12-7z"/></svg>
+              <svg class="ic-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+            </button>
+            <button class="player-side" id="music-next" aria-label="Piste suivante">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5v14l9-7zM16 5h2.4v14H16z"/></svg>
+            </button>
+            <div class="player-mid">
+              <div class="player-title" id="music-title" data-i18n="settings.music.none">Aucune piste pour le moment</div>
+              <div class="player-vol">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a4 4 0 0 1 0 7"/></svg>
+                <input type="range" id="music-vol" class="set-range vol-range" min="0" max="100" step="1" value="60">
+              </div>
+            </div>
+          </div>
+          <audio id="music-audio" preload="none" loop></audio>
+        </div>
+
+        <div class="set-group">
+          <button class="btn" id="settings-reset">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 4v4h4"/></svg>
+            <span data-i18n="settings.reset">Réinitialiser les réglages</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
   </div>
 
   <!-- ════════════ Progressive blur — 8 layers (SC method) ════════════ -->
@@ -389,5 +502,6 @@
   </div>
 
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/settings.js"></script>
 </body>
 </html>
