@@ -14,7 +14,11 @@
   --col: 680px;
   --nav-w: 64px;
   --ease: cubic-bezier(.22,.61,.36,1);
+  /* lueur au survol : blanche sur fond sombre (peu diffuse) */
+  --glow: 0 2px 10px oklch(1 0 0 / 0.26);
 }
+/* lueur inversée (sombre) sur fond clair */
+:root[data-theme="light"]{ --glow: 0 2px 10px oklch(0 0 0 / 0.30); }
 /* ── Thème clair ─────────────────────────── */
 :root[data-theme="light"]{
   --bg: oklch(0.99 0 0);
@@ -35,9 +39,17 @@
 :root[data-theme="light"] .nav a:hover{ background: oklch(0.88 0 0 / 0.7); }
 :root[data-theme="light"] .nav a.active{ background: oklch(0.84 0 0 / 0.85); }
 
-/* Transition douce lors du changement de thème */
-body, .nav, .btn, .set-row, .seg, .seg-btn, .player, .testi, .proj-card, .logo-cell, .chip, .tool{
-  transition: background-color .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease);
+/* Transition douce (thème + survol) */
+body, .nav, .btn, .set-row, .seg, .seg-btn, .player, .player-play, .player-side,
+.soc-btn, .car-btn, .back-btn, .nav a, .link-row, .testi, .proj-card, .logo-cell, .chip, .tool{
+  transition: background-color .25s var(--ease), border-color .25s var(--ease),
+              color .25s var(--ease), transform .2s var(--ease), box-shadow .25s var(--ease);
+}
+
+/* Lueur au survol — boutons d'action uniquement (pas la nav ni les réglages,
+   sauf le bouton .btn « Réinitialiser » qui en bénéficie). */
+.btn:hover, .soc-btn:hover{
+  box-shadow: var(--glow);
 }
 
 /* ── Curseur global ──────────────────────── */
@@ -371,14 +383,13 @@ button{ font-family: inherit; }
 /* ===========================================================
    CONTACT
    =========================================================== */
-.links{ display:flex; flex-direction:column; }
+.links{ display:flex; flex-direction:column; gap: 12px; }
 .link-row{
   display:flex; align-items:center; justify-content:space-between;
-  padding: 18px 2px; border-top: 1px solid var(--border-soft); font-size: 16px;
-  transition: padding-left .2s var(--ease);
+  padding: 18px 22px; font-size: 16px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
 }
-.link-row:last-child{ border-bottom: 1px solid var(--border-soft); }
-.link-row:hover{ padding-left: 8px; }
+.link-row:hover{ transform: translateY(-2px); border-color: var(--faint); box-shadow: var(--glow); }
 .link-row .lr-k{ color: var(--muted); }
 .link-row .lr-v{ display:flex; align-items:center; gap: 10px; font-weight: 500; }
 .link-row .arr{ opacity:.4; transition: transform .2s var(--ease), opacity .2s var(--ease); }
