@@ -148,7 +148,7 @@ button{ font-family: inherit; }
    =========================================================== */
 .avatar{
   width: 96px; height: 96px; display:block; margin-bottom: 30px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 50%;
 }
 .hero h1{
   font-size: clamp(32px, 6.3cqi, 54px); font-weight: 700; line-height: 1.05;
@@ -188,6 +188,7 @@ button{ font-family: inherit; }
 }
 .mood-tile--tall{ grid-row: span 2; }
 .mood-tile--wide{ grid-column: span 2; }
+.mood-vid{ object-fit: cover; }
 
 /* ── Bio text ── */
 .bio-text{
