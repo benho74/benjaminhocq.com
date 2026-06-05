@@ -56,106 +56,97 @@
           </button>
         </div>
 
-        <!-- PARCOURS (carousel) -->
-        <div class="block" id="blk-parcours">
-          <h2 class="sec-title">Parcours</h2>
-          <p class="sec-lead">Là où j'ai exercé ces dernières années.</p>
-          <div class="carousel">
-            <div class="slides">
+        <!-- BIO — mosaïque d'images -->
+        <div class="block" id="blk-bio">
+          <p class="sec-kicker">Bio</p>
+          <h2 class="sec-title-lg">Quelques images.</h2>
+          <div class="mood-grid">
+            <image-slot id="bio-1" class="mood-tile mood-tile--tall" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=900&q=80" placeholder="Photo"></image-slot>
+            <image-slot id="bio-2" class="mood-tile" src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80" placeholder="Photo"></image-slot>
+            <image-slot id="bio-3" class="mood-tile" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=900&q=80" placeholder="Photo"></image-slot>
+            <image-slot id="bio-4" class="mood-tile" src="https://images.unsplash.com/photo-1485160497022-3e09382fb310?w=900&q=80" placeholder="Photo"></image-slot>
+            <image-slot id="bio-5" class="mood-tile mood-tile--wide" src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1400&q=80" placeholder="Photo"></image-slot>
+          </div>
+        </div>
 
-              <div class="slide is-active">
-                <image-slot id="work-viva" placeholder="Visuel — VIVA Santé"></image-slot>
-                <div class="work-meta">
-                  <div class="work-logo">V</div>
-                  <div class="work-info">
-                    <div class="wt">VIVA Santé — Lausanne <span>Depuis fév. 2024</span></div>
-                    <div class="wr">Graphiste · Vidéaste</div>
-                  </div>
-                  <div class="car-nav">
-                    <button class="car-btn" data-car="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
-                    <button class="car-btn" data-car="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
-                  </div>
-                </div>
-                <p class="work-desc">Montage de vidéos marketing, mise en page de livres éditoriaux, direction et organisation du pôle création, pilotage de la chaîne graphique et création de visuels promotionnels.</p>
-              </div>
+        <!-- BIO — texte -->
+        <div class="block" id="blk-bio-text">
+          <p class="bio-text">
+            Depuis toujours, j'aime regarder, observer, comprendre comment les choses sont faites — un livre,
+            une affiche, un film. Ce qui a commencé comme une curiosité est devenu un métier : aujourd'hui,
+            je passe mes journées à donner forme à des idées. Entre vidéo, design éditorial et identité visuelle,
+            je cherche toujours le même geste : <b>trouver la juste image pour la juste intention</b>.
+          </p>
+          <p class="bio-text">
+            Je travaille à Lausanne, je vis dans le canton de Vaud, et je m'investis dans des projets qui ont
+            du sens — pour des personnes avec qui le courant passe.
+          </p>
+        </div>
 
-              <div class="slide">
-                <image-slot id="work-indep" placeholder="Visuel — Indépendant"></image-slot>
-                <div class="work-meta">
-                  <div class="work-logo">I</div>
-                  <div class="work-info">
-                    <div class="wt">Indépendant — Annecy, Nyon &amp; Genève <span>2023 – 2024</span></div>
-                    <div class="wr">Graphiste · Web Design</div>
-                  </div>
-                  <div class="car-nav">
-                    <button class="car-btn" data-car="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
-                    <button class="car-btn" data-car="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
-                  </div>
-                </div>
-                <p class="work-desc">Développement de sites web, création d'identités de marque et de divers supports de communication, web comme print.</p>
-              </div>
+        <!-- CITATION -->
+        <div class="block" id="blk-quote">
+          <blockquote class="quote-left">
+            <span class="ql-mark">“</span>
+            <p class="ql-text">Un bon visuel ne se contente pas d'être beau — il dit quelque chose.</p>
+            <p class="ql-sign">— Benjamin</p>
+          </blockquote>
+        </div>
 
-              <div class="slide">
-                <image-slot id="work-lakepub" placeholder="Visuel — Lake Pub"></image-slot>
-                <div class="work-meta">
-                  <div class="work-logo">L</div>
-                  <div class="work-info">
-                    <div class="wt">Lake Pub — Sevrier <span>2021 – 2023</span></div>
-                    <div class="wr">Assistant direction artistique</div>
-                  </div>
-                  <div class="car-nav">
-                    <button class="car-btn" data-car="prev" aria-label="Précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
-                    <button class="car-btn" data-car="next" aria-label="Suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></button>
-                  </div>
-                </div>
-                <p class="work-desc">Réalisation et évolution de l'identité visuelle, supports de communication, promotion d'évènements sur les réseaux et conception d'interfaces web &amp; mobiles.</p>
-              </div>
-
+        <!-- LOGOS — Ils m'ont fait confiance (marquee infini) -->
+        <div class="block" id="blk-logos">
+          <p class="sec-kicker">Ils m'ont fait confiance</p>
+          <h2 class="sec-title-lg">Quelques collaborations.</h2>
+          <div class="logo-marquee">
+            <div class="logo-track">
+              <div class="logo-cell"><image-slot id="logo-1" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-2" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-3" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-4" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-5" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-6" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-7" class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell"><image-slot id="logo-8" class="logo-img" placeholder="Logo"></image-slot></div>
+              <!-- duplication pour boucle infinie -->
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
+              <div class="logo-cell" aria-hidden="true"><image-slot class="logo-img" placeholder="Logo"></image-slot></div>
             </div>
           </div>
         </div>
 
-        <!-- PROJETS (aperçu) -->
-        <div class="block" id="blk-projets">
-          <h2 class="sec-title">Projets</h2>
-          <p class="sec-lead">Une sélection de réalisations récentes.</p>
-          <div class="list">
-            <div class="list-row" data-project="sublizme">
-              <div class="list-ic">S</div>
-              <div class="list-tx"><div class="lt">Sublizme</div><div class="ld">Identité · UI</div></div>
-              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-            </div>
-            <div class="list-row" data-project="ma-dose-crea">
-              <div class="list-ic">M</div>
-              <div class="list-tx"><div class="lt">Ma dose créa</div><div class="ld">Direction artistique · Web</div></div>
-              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-            </div>
-            <div class="list-row" data-project="elevet">
-              <div class="list-ic">E</div>
-              <div class="list-tx"><div class="lt">ELEVET</div><div class="ld">Produit · Prototype</div></div>
-              <svg class="chev" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-            </div>
-          </div>
-          <div class="more"><a data-view="projets">Voir tous les projets
-            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        </div>
-
-        <!-- TÉMOIGNAGES -->
+        <!-- TÉMOIGNAGES — maçonnerie verticale -->
         <div class="block" id="blk-testi">
           <h2 class="sec-title">Ils en parlent</h2>
           <p class="sec-lead">Quelques retours de personnes avec qui j'ai collaboré.</p>
-          <div class="testi-scroll">
+          <div class="testi-masonry">
             <article class="testi">
               <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
               <div class="ta"><image-slot id="testi-1" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
             </article>
             <article class="testi">
-              <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
+              <p class="tq">« Un retour plus long, sur deux ou trois lignes, pour donner du rythme à la mise en page en maçonnerie et montrer que les cartes s'adaptent à la longueur du texte. »</p>
               <div class="ta"><image-slot id="testi-2" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
             </article>
             <article class="testi">
               <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
               <div class="ta"><image-slot id="testi-3" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
+            </article>
+            <article class="testi">
+              <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin. »</p>
+              <div class="ta"><image-slot id="testi-4" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
+            </article>
+            <article class="testi">
+              <p class="tq">« Un retour un peu plus court ici. »</p>
+              <div class="ta"><image-slot id="testi-5" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
+            </article>
+            <article class="testi">
+              <p class="tq">« Un retour client à venir — espace réservé pour une recommandation sur le travail de Benjamin, suffisamment long pour varier les hauteurs. »</p>
+              <div class="ta"><image-slot id="testi-6" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Nom Prénom</span></div>
             </article>
           </div>
         </div>
@@ -385,9 +376,16 @@
 
   </div>
 
-  <!-- ════════════ Progressive blur ════════════ -->
-  <div class="blur-fade" aria-hidden="true">
-    <div class="b1"></div><div class="b2"></div><div class="b3"></div><div class="b4"></div><div class="tint"></div>
+  <!-- ════════════ Progressive blur — 8 layers (SC method) ════════════ -->
+  <div class="liquid-glass" aria-hidden="true">
+    <div class="lg-layer lg-l1"></div>
+    <div class="lg-layer lg-l2"></div>
+    <div class="lg-layer lg-l3"></div>
+    <div class="lg-layer lg-l4"></div>
+    <div class="lg-layer lg-l5"></div>
+    <div class="lg-layer lg-l6"></div>
+    <div class="lg-layer lg-l7"></div>
+    <div class="lg-layer lg-l8"></div>
   </div>
 
   <script src="assets/js/app.js"></script>
