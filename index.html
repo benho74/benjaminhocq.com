@@ -306,34 +306,9 @@
     <section class="view" id="view-projets">
       <div class="feed" data-screen-label="Projets">
         <h2 class="sec-title">Projets</h2>
-        <p class="sec-lead">Voici quelques projets qui illustrent mon travail. Il y en a d'autres — j'ai gardé une sélection pour rester clair et concis.</p>
+        <p class="sec-lead">Une sélection de projets — branding, identité visuelle, web design et UX/UI — réalisés ces dernières années.</p>
 
-        <div class="proj-cards">
-          <article class="proj-card" data-project="sublizme">
-            <image-slot id="card-sublizme" placeholder="Visuel"></image-slot>
-            <div class="pc-body">
-              <h3>Sublizme</h3>
-              <p>Une courte phrase sur le projet : ce que c'était, votre rôle, le résultat.</p>
-              <div class="pc-meta">Identité · UI — 2025</div>
-            </div>
-          </article>
-          <article class="proj-card" data-project="ma-dose-crea">
-            <image-slot id="card-madosecrea" placeholder="Visuel"></image-slot>
-            <div class="pc-body">
-              <h3>Ma dose créa</h3>
-              <p>Une courte phrase sur le projet : ce que c'était, votre rôle, le résultat.</p>
-              <div class="pc-meta">Direction artistique · Web — 2024</div>
-            </div>
-          </article>
-          <article class="proj-card" data-project="elevet">
-            <image-slot id="card-elevet" placeholder="Visuel"></image-slot>
-            <div class="pc-body">
-              <h3>ELEVET</h3>
-              <p>Une courte phrase sur le projet : ce que c'était, votre rôle, le résultat.</p>
-              <div class="pc-meta">Produit · Prototype — 2024</div>
-            </div>
-          </article>
-        </div>
+        <div class="proj-cards" id="proj-list"></div>
       </div>
     </section>
 
@@ -344,13 +319,7 @@
           <button class="back-btn" data-back aria-label="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
           <span class="dt-label">Projets</span>
         </div>
-        <article class="detail-card">
-          <p class="dc-cat"><span id="pd-cat">Projet</span><span id="pd-date">2025</span></p>
-          <h1 id="pd-title">Sublizme</h1>
-          <p class="dc-body" id="pd-lead">Description du projet…</p>
-          <div id="pd-image-holder"><image-slot id="pd-img-sublizme" placeholder="Visuel"></image-slot></div>
-          <p class="dc-body">Espace réservé au contenu détaillé du projet : contexte, démarche, rôle, livrables et résultats. Tu pourras remplacer ce texte et déposer tes visuels.</p>
-        </article>
+        <article class="detail-card" id="pd-content"></article>
       </div>
     </section>
 
