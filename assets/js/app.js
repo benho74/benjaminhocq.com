@@ -78,8 +78,7 @@
     var paras = p.paras.map(function(t){ return '<p class="dc-body">' + esc(t) + '</p>'; }).join('');
 
     host.innerHTML =
-        '<p class="dc-cat"><span>' + esc(p.cat) + '</span><span>' + esc(p.date) + '</span></p>'
-      + '<h1>' + esc(p.title) + '</h1>'
+        '<h1>' + esc(p.title) + '</h1>'
       + '<div class="pd-tags">' + tags + '</div>'
       + '<p class="pd-intro">' + esc(p.intro) + '</p>'
       + (cover ? '<div class="pd-media">' + cover + '</div>' : '')

@@ -373,8 +373,11 @@ button{ font-family: inherit; }
 }
 .proj-card:hover{ transform: translateY(-3px); border-color: oklch(0.36 0 0); }
 .proj-card image-slot{ width: 220px; height: 100%; min-height: 180px; display:block; }
-.proj-card .pc-cover{ width: 240px; height: 100%; min-height: 200px; overflow: hidden; background: var(--surface-2); }
-.proj-card .pc-cover img{ width: 100%; height: 100%; min-height: 200px; object-fit: cover; display: block; }
+.proj-card .pc-cover{ width: 240px; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); }
+.proj-card .pc-cover img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.proj-card .pc-body p{
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
 .proj-card .pc-body{ padding: 24px 26px; display:flex; flex-direction: column; justify-content:center; }
 .proj-card h3{ font-size: 21px; font-weight: 600; margin:0; letter-spacing:-0.02em; }
 .proj-card p{ color: var(--muted); font-size: 15px; line-height:1.55; margin: 10px 0 0; }
@@ -410,13 +413,17 @@ button{ font-family: inherit; }
   font-weight: 500; margin: 24px 0 0; max-width: 60ch;
 }
 .pd-meta{
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px 28px; margin: 30px 0 0; padding: 24px 0;
-  border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px; margin: 30px 0 0;
 }
-.pd-mrow{ display:flex; flex-direction: column; gap: 4px; min-width: 0; }
-.pd-mk{ font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
-.pd-mv{ font-size: 15px; color: var(--text); overflow-wrap: anywhere; }
+.pd-mrow{
+  display:flex; flex-direction: column-reverse; align-items: center; gap: 7px;
+  text-align: center; min-width: 0;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 22px 16px;
+}
+.pd-mk{ font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+.pd-mv{ font-size: clamp(16px, 2.2cqi, 20px); font-weight: 700; color: var(--text); line-height: 1.2; overflow-wrap: anywhere; }
 .pd-paras{ margin-top: 28px; }
 .pd-paras .dc-body{ margin-top: 0; }
 .pd-paras .dc-body + .dc-body{ margin-top: 18px; }
@@ -683,6 +690,7 @@ button{ font-family: inherit; }
   .feed{ padding-bottom: 150px; }
   .proj-card{ grid-template-columns: 1fr; }
   .proj-card image-slot{ width:100%; height: 190px; }
+  .proj-card .pc-cover{ width: 100%; aspect-ratio: 16 / 10; }
   .contact-grid{ grid-template-columns: 1fr; }
   .form .row2{ grid-template-columns: 1fr; }
   .profil-head .ph-avatar{ width: 96px; height: 120px; }
