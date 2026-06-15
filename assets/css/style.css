@@ -192,7 +192,8 @@ button{ font-family: inherit; }
 
 /* ── Bio text ── */
 .bio-text{
-  color: var(--muted); font-size: clamp(16px, 2.4cqi, 19px); line-height: 1.7; margin: 0 0 18px;
+  color: var(--text); font-weight: 300; font-size: clamp(16px, 2.4cqi, 19px);
+  line-height: 1.7; margin: 0 0 18px;
 }
 .bio-text b{ color: var(--text); font-weight: 600; }
 
