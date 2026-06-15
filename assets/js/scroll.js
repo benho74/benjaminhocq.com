@@ -52,7 +52,7 @@
 
     function loop() {
       var diff = target - current;
-      current += diff * 0.075;
+      current += diff * 0.15;
       if (Math.abs(diff) < 0.4) {
         current = target;
         window.scrollTo(0, current);

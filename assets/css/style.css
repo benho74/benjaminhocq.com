@@ -8,7 +8,7 @@
   --surface-3: oklch(0.20 0 0);
   --border: oklch(0.24 0 0);
   --border-soft: oklch(0.19 0 0);
-  --text: oklch(0.97 0 0);
+  --text: #F4F0E8; /* blanc cassé — ajuster ici */
   --muted: oklch(0.68 0 0);
   --faint: oklch(0.50 0 0);
   --col: 680px;
