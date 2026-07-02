@@ -27,38 +27,43 @@
     '.footer .bye',
     '.footer .copy',
     // Profil / CV
-    '#view-profil .ph-avatar',
+    '#view-profil .ph-avatar-frame',
     '#view-profil .ph-info h1',
     '#view-profil .ph-info .role',
     '#view-profil .contact-grid > *',
     '.cv-label',
     '.about',
     '.entry .e-title',
+    '.entry .e-sub',
     '.entry .e-org',
     '.entry .e-date',
     '.entry .e-desc',
     '.chip',
+    '.tool-group',
     '.toolchip',
     '.kv',
     '.block > .btn',
     // Projets
     '.proj-card',
+    // Projet — détail (éléments internes uniquement, pas la carte elle-même)
+    '#view-projet .detail-card > h1',
+    '#view-projet .pd-tag',
+    '#view-projet .pd-intro',
+    '#view-projet .pd-mrow',
+    '#view-projet .pd-paras .dc-body',
+    '#view-projet .pd-media img',
+    '#view-projet .pd-media video',
+    '#view-projet .pd-nav-btn',
     // Contact
     '.link-row',
     '.form .row2',
     '.form > .field',
     '.form .btn',
-    '.form .sent-msg',
     // Paramètres
     '.set-row',
   ].join(',');
 
-  const projetView = document.getElementById('view-projet');
-  const targets = Array.from(root.querySelectorAll(SELECTORS))
-    .filter((el) => !projetView || !projetView.contains(el));
-  if (!targets.length) return;
-
-  targets.forEach((el) => el.classList.add('tilt-scroll'));
+  const seen = new WeakSet();
 
   const bezier = (p1x, p1y, p2x, p2y) => {
     const cx = 3 * p1x;
@@ -106,7 +111,11 @@
   const EXIT_OPACITY_MIN = 0.35;
   const EXIT_BLUR = 1.5;
 
-  const state = targets.map((el) => ({ el, visible: true }));
+  const state = [];
+  let rafId = 0;
+  const schedule = () => {
+    if (!rafId) rafId = requestAnimationFrame(update);
+  };
 
   const io = new IntersectionObserver(
     (entries) => {
@@ -118,13 +127,29 @@
     },
     { rootMargin: '40% 0px 40% 0px' }
   );
-  state.forEach((s) => io.observe(s.el));
 
-  let rafId = 0;
+  const projetView = document.getElementById('view-projet');
+  const addTargets = (scope) => {
+    const found = Array.from((scope || root).querySelectorAll(SELECTORS));
+    let added = 0;
+    for (const el of found) {
+      if (seen.has(el)) continue;
+      seen.add(el);
+      el.classList.add('tilt-scroll');
+      const slow = projetView ? projetView.contains(el) : false;
+      const s = { el, visible: true, slow };
+      state.push(s);
+      io.observe(el);
+      added++;
+    }
+    if (added) schedule();
+  };
+
   const update = () => {
     rafId = 0;
     const vh = window.innerHeight;
     const halfVh = vh * 0.5;
+    const slowEnd = vh * 0.18;
 
     for (const s of state) {
       if (!s.visible) continue;
@@ -132,12 +157,15 @@
       const h = rect.height;
       const top = rect.top;
 
+      const entryEnd = s.slow ? slowEnd : halfVh;
+      const entryRange = vh - entryEnd;
+
       let entry;
       let exit;
       if (top >= vh) {
         entry = 0; exit = 0;
-      } else if (top >= halfVh) {
-        entry = 1 - (top - halfVh) / halfVh;
+      } else if (top >= entryEnd) {
+        entry = 1 - (top - entryEnd) / entryRange;
         exit = 0;
       } else if (top >= 0) {
         entry = 1; exit = 0;
@@ -171,11 +199,10 @@
     }
   };
 
-  const schedule = () => {
-    if (!rafId) rafId = requestAnimationFrame(update);
-  };
-
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule);
+
+  addTargets(root);
+  window.applyScrollTilt = addTargets;
   update();
 })();

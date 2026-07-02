@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "benjaminhocq",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["/tmp/bh-serve.py"],
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["serve.rb"],
       "port": 7878
     }
   ]

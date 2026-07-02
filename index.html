@@ -64,125 +64,152 @@
             <image-slot id="avatar" class="avatar" shape="circle" src="assets/images/profil-01.jpg" placeholder="Photo"></image-slot>
             <div class="hero-id">
               <h1 class="hero-name">Benjamin Hocq</h1>
-              <p class="hero-role">Chef de projet opérationnel et designer</p>
-              <span class="status"><span class="status-dot"></span>Disponible</span>
+              <p class="hero-role" data-i18n="hero.role">Designer graphique · Web designer</p>
+              <span class="status"><span class="status-dot"></span><span data-i18n="hero.available">Disponible</span></span>
             </div>
           </div>
-          <p class="body">
+          <p class="body" data-i18n-html="hero.body1">
             Basé entre Genève et Lausanne, je conçois des <b>identités visuelles</b>, des
             <b>sites web</b> et des <b>contenus digitaux</b> depuis plusieurs années. J'ai
             travaillé pour des médias, des agences et des structures locales.
           </p>
-          <p class="body">
+          <p class="body" data-i18n="hero.body2">
             Aujourd'hui employé par un média lausannois, je pilote des projets opérationnels
             dans leur globalité. En parallèle, je m'investis dans des projets ambitieux
             qui me passionnent.
           </p>
-          <p class="body">Je vous souhaite une bonne visite dans mon univers…</p>
-          <button class="btn" data-view="contact"><span id="hero-btn-text">Me contacter</span>
+          <button class="btn" data-view="contact"><span id="hero-btn-text" data-i18n="hero.cta">Me contacter</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
         </div>
 
-        <!-- BIO — texte + mosaïque d'images -->
+        <!-- BIO — texte -->
         <div class="block" id="blk-bio">
-          <p class="sec-kicker">Bio</p>
-          <p class="bio-text">
+          <p class="sec-kicker" data-i18n="bio.kicker">Bio</p>
+          <p class="bio-text" data-i18n="bio.p1">
             Mon parcours a commencé dans le commerce et la relation client, où j'ai appris à comprendre
             les besoins des gens et à y répondre avec précision. Mais la création m'a toujours accompagné :
             depuis l'enfance, je dessine, j'imagine et je donne forme à des idées.
           </p>
-          <div class="mood-grid">
-            <image-slot id="bio-1" class="mood-tile" src="assets/images/profil-02.jpg" placeholder="Photo"></image-slot>
-            <image-slot id="bio-2" class="mood-tile" src="assets/images/photo-03.jpg" placeholder="Photo"></image-slot>
-            <image-slot id="bio-3" class="mood-tile" src="assets/images/profil-07.jpg" placeholder="Photo"></image-slot>
-            <image-slot id="bio-4" class="mood-tile" src="assets/images/photo-04.jpg" placeholder="Photo"></image-slot>
-            <image-slot id="bio-5" class="mood-tile" src="assets/images/photo-05.webp" placeholder="Photo"></image-slot>
-            <image-slot id="bio-5" class="mood-tile" src="assets/images/photo-05.png" placeholder="Photo"></image-slot>
-          </div>
-        
-        <!-- BIO — texte -->
-          <br>
-          <p class="bio-text">
+          <p class="bio-text" data-i18n="bio.p2">
             Après un séjour de trois mois en Irlande, j'ai pris une décision claire : faire de cette passion
             mon métier. Je me suis reconverti et j'ai repris mes études à l'école des Gobelins, avant de me
             lancer en freelance pour des clients aux univers variés — bars à jeux, agences, salons de coiffure
             ou encore immobilier.
           </p>
-          <p class="bio-text">
+          <p class="bio-text" data-i18n="bio.p3">
             J'ai ensuite rejoint un média lausannois comme graphiste-vidéaste. En quelques années, j'y ai
             évolué jusqu'au poste de chef de projet opérationnel, où je pilote aujourd'hui des projets dans
             leur globalité tout en développant mes propres projets en parallèle.
           </p>
         </div>
 
-        <!-- CITATION -->
-        <div class="block" id="blk-quote">
-          <blockquote class="quote-left">
-            <span class="ql-mark">“</span>
-            <p class="ql-text">la modernité, c’est la rencontre de la mode et de l’éternité</p>
-            <p class="ql-sign">— Charles Baudelaire</p>
-          </blockquote>
-        </div>
-
-        <!-- LOGOS — Ils m'ont fait confiance (marquee infini) -->
+<!-- LOGOS — Ils m'ont fait confiance (marquee infini) -->
         <div class="block" id="blk-logos">
-          <p class="sec-kicker">Ils m'ont fait confiance</p>
-          <h2 class="sec-title-lg">Quelques collaborations.</h2>
+          <p class="sec-kicker" data-i18n="logos.kicker">Ils m'ont fait confiance</p>
+          <h2 class="sec-title-lg" data-i18n="logos.title">Quelques collaborations.</h2>
           <div class="logo-marquee">
-            <div class="logo-track">
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt="Partenaire"></div>
-              <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt="Partenaire"></div>
-              <!-- duplication pour boucle infinie -->
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt=""></div>
-              <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt=""></div>
+            <!-- Ligne 1 : Fichier 2, 5, 7 -->
+            <div class="logo-row">
+              <div class="logo-track">
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt="Partenaire"></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%202.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%205.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%207.svg" alt=""></div>
+              </div>
+            </div>
+            <!-- Ligne 2 (sens inverse) : Fichier 3, 8, 10 -->
+            <div class="logo-row logo-row--reverse">
+              <div class="logo-track">
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt="Partenaire"></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%203.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%208.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%2010.svg" alt=""></div>
+              </div>
+            </div>
+            <!-- Ligne 3 : Fichier 4, 6, 9 -->
+            <div class="logo-row">
+              <div class="logo-track">
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt="Partenaire"></div>
+                <div class="logo-cell"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt="Partenaire"></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%204.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%206.svg" alt=""></div>
+                <div class="logo-cell" aria-hidden="true"><img class="logo-img" src="assets/images/logo%20partenaire/Fichier%209.svg" alt=""></div>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- TÉMOIGNAGES — maçonnerie verticale -->
         <div class="block" id="blk-testi">
-          <h2 class="sec-title">Ils en parlent</h2>
-          <p class="sec-lead">Quelques retours de personnes avec qui j'ai collaboré.</p>
+          <h2 class="sec-title" data-i18n="testi.title">Ils en parlent</h2>
+          <p class="sec-lead" data-i18n="testi.lead">Quelques retours de personnes avec qui j'ai collaboré.</p>
           <div class="testi-masonry">
             <article class="testi">
               <p class="tq">« Benjamin nous a accompagné de la création au lancement. Il a créer notre logo, notre identité visuelle, notre site internet, tout nos réseaux sociaux. Son travail est excellent et ses conseils précieux! Il a été pour nous un atout formidable à la réussite de notre lancement! Merci infiniment »</p>
-              <div class="ta"><image-slot id="testi-1" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Bruno Petitjean</span></div>
+              <div class="ta"><span class="ta-av" aria-hidden="true">BP</span><span class="tn">Bruno Petitjean</span></div>
             </article>
             <article class="testi">
-              <p class="tq">« Très professionnel ! 
+              <p class="tq">« Très professionnel !
               Benjamin est un excellent graphiste.Je suis ravie de la qualité de son travail. Disponible, à l'écoute et ultra rapide. »</p>
-              <div class="ta"><image-slot id="testi-2" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Clara HERRY</span></div>
+              <div class="ta"><span class="ta-av" aria-hidden="true">CH</span><span class="tn">Clara HERRY</span></div>
             </article>
             <article class="testi">
               <p class="tq">« Merci pour cette expérience, j'ai adoré notre collaboration, le résultat de mon identité visuelle est parfait ! Je vous recommande à 100% »</p>
-              <div class="ta"><image-slot id="testi-3" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Vladimir Campello</span></div>
+              <div class="ta"><span class="ta-av" aria-hidden="true">VC</span><span class="tn">Vladimir Campello</span></div>
             </article>
             <article class="testi">
               <p class="tq">« Benjamin à su comprendre nos attentes rapidement - son travail est incroyablement efficace!! Merci beaucoup »</p>
-              <div class="ta"><image-slot id="testi-4" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Valentin Payet</span></div>
+              <div class="ta"><span class="ta-av" aria-hidden="true">VP</span><span class="tn">Valentin Payet</span></div>
             </article>
             <article class="testi">
               <p class="tq">« Nous sommes très contents de cette collaboration et apprécions particulièrement votre travail. Merci encore! »</p>
-              <div class="ta"><image-slot id="testi-5" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Mi Li</span></div>
+              <div class="ta"><span class="ta-av" aria-hidden="true">ML</span><span class="tn">Mi Li</span></div>
             </article>
             <article class="testi">
               <p class="tq">« Nous sommes très satisfait - ils s`agissait d`une première collaboration - Nous retravaillerons ensemble - merci »</p>
-              <div class="ta"><image-slot id="testi-6" class="ta-av" shape="circle" placeholder=""></image-slot><span class="tn">Valentina Curina</span></div>
+              <div class="ta"><span class="ta-av" aria-hidden="true">VC</span><span class="tn">Valentina Curina</span></div>
             </article>
           </div>
         </div>
@@ -190,17 +217,17 @@
         <!-- FOOTER -->
         <footer class="footer">
           <div class="socials">
-            <a class="soc-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
-            <a class="soc-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
-            <a class="soc-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 8.5h2V5.5h-2.4C12.9 5.5 12 6.9 12 8.7V10H9.8v3H12v8h3v-8h2.3l.4-3H15v-1.2c0-.7.2-1.3 1.3-1.3z"/></svg></a>
+            <a class="soc-btn" href="tel:+41772813052" data-i18n-aria="contact.phone" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+            <a class="soc-btn" href="mailto:benjamin.hocq@outlook.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
+            <a class="soc-btn" href="https://www.linkedin.com/in/benjamin-hocq-b3a06114b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
           </div>
           <div class="signature">
             <img src="assets/images/signature-ben-white.png" alt="Signature Benjamin Hocq" class="signature-img signature-img--dark">
             <img src="assets/images/signature-ben-black.png" alt="Signature Benjamin Hocq" class="signature-img signature-img--light">
           </div>
-          <p class="thanks">Merci de votre visite.</p>
-          <p class="bye">Explorez à votre rythme. À très vite.</p>
-          <p class="copy">© 2026 Benjamin Hocq</p>
+          <p class="thanks" data-i18n="footer.thanks">Merci de votre visite.</p>
+          <p class="bye" data-i18n="footer.bye">Explorez à votre rythme. À très vite.</p>
+          <p class="copy" data-i18n="footer.copy">© 2026 Benjamin Hocq</p>
         </footer>
 
       </div>
@@ -211,115 +238,143 @@
       <div class="feed" data-screen-label="Profil">
 
         <div class="profil-head">
-          <image-slot id="ph-avatar" class="ph-avatar" shape="rounded" radius="20" src="assets/images/profil-05.jpg" placeholder="Photo"></image-slot>
+          <div class="ph-avatar-frame">
+            <image-slot id="ph-avatar" class="ph-avatar" shape="rounded" radius="0" src="assets/images/profil-05.jpg" placeholder="Photo" position="50% 28%"></image-slot>
+          </div>
           <div class="ph-info">
             <h1>Benjamin Hocq</h1>
-            <p class="role">Graphic Designer</p>
+            <p class="role" data-i18n="profil.role">Designer graphique</p>
             <div class="contact-grid">
               <a href="mailto:benjamin.hocq@outlook.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg> benjamin.hocq@outlook.com</a>
-              <a href="tel:+33788310031"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +41 77 281 30 52</a>
-              <a href="https://www.benjaminhocq.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> www.benjaminhocq.com</a>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Route de Lausanne 5, 1180 Rolle</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="M7 9h4M7 13h7"/></svg> Permis B</span>
+              <a href="tel:+41772813052"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +41 77 281 30 52</a>
+              <a href="https://www.benjaminhocq.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> Portfolio · benjaminhocq.com</a>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> <span data-i18n="profil.address">Route de Lausanne 5, 1180 Rolle</span></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="M7 9h4M7 13h7"/></svg> <span data-i18n="profil.license">Permis B</span></span>
             </div>
           </div>
         </div>
 
         <div class="block" style="margin-top:48px">
-          <p class="cv-label">À propos</p>
-          <p class="about">Actif dans la région de Genève et Lausanne, je suis actuellement chef de projet opérationnel au sein d’un média basé en suisse. Issu d’un parcours mêlant design, communication et gestion de projet, je dispose de solides compétences techniques, d’une bonne maîtrise des outils numériques et d’une forte capacité d’adaptation. Je souhaite aujourd’hui rejoindre une structure dans laquelle m’investir durablement, évoluer au fil du temps et contribuer pleinement à son développement.</p>
+          <p class="cv-label" data-i18n="cv.about">À propos</p>
+          <p class="about" data-i18n="cv.about.body">Designer graphique avec plus de 5 ans d'expérience en création visuelle, digital, print et marketing, aujourd'hui passé chef de projet digital. J'imagine et produis des contenus photo, vidéo et graphiques destinés aux sites web, aux campagnes digitales et aux supports print. Habitué aux environnements exigeants, je combine créativité, sens du détail et rapidité d'exécution pour livrer des contenus performants.</p>
         </div>
 
         <div class="block">
-          <p class="cv-label">Expériences</p>
+          <p class="cv-label" data-i18n="cv.exp">Expériences</p>
           <div class="entry">
-            <span class="e-title">VIVA Santé — Lausanne</span>
-            <span class="e-org">Chef de projet opérationnel</span>
-            <span class="e-date">Depuis janv. 2026</span>
-            <span class="e-desc">Coordination des webinaires. Opérations sur Salesforce Marketing Cloud. Coordination des freelances. Mise en place et structuration de l'espace de travail Notion. Gestion des plannings de shooting. Gestion du fulfillment client (exécution et livraison des prestations vendues).</span>
+            <span class="e-title" data-i18n="cv.exp1.title">Graphiste · Vidéaste → Chef de projet digital</span>
+            <span class="e-sub" data-i18n="cv.exp1.sub">Promotion interne 2026</span>
+            <span class="e-org" data-i18n="cv.exp1.org">VIVA Santé — Lausanne</span>
+            <span class="e-date" data-i18n="cv.exp1.date">Fév. 2024 – présent</span>
+            <div class="e-desc">
+              <ul class="e-list">
+                <li data-i18n="cv.exp1.li1">Création des visuels marketing pour les campagnes digitales, pages web et supports print.</li>
+                <li data-i18n="cv.exp1.li2">Production vidéo — tournage, montage et livraison J+1 pour YouTube, webinaires et campagnes d'acquisition &amp; fidélisation.</li>
+                <li data-i18n="cv.exp1.li3">Conception et intégration de landing pages WordPress orientées conversion.</li>
+                <li data-i18n="cv.exp1.li4">Déclinaison graphique des campagnes marketing sur l'ensemble des supports (web, email, print).</li>
+                <li data-i18n="cv.exp1.li5">Pilotage opérationnel (2026) : coordination de 5 freelances et 7 experts, planning de 8-9 webinaires/mois, campagnes Salesforce, fulfillment de ~10 produits.</li>
+              </ul>
+            </div>
           </div>
           <div class="entry">
-            <span class="e-title">VIVA Santé — Lausanne</span>
-            <span class="e-org">Graphiste · Vidéaste</span>
-            <span class="e-date">Fév. 2024 – janv. 2026</span>
-            <span class="e-desc">Montage de vidéos marketing. Mise en page de livres éditoriaux. Direction et organisation du pôle création. Pilotage de la chaîne graphique. Création de visuels promotionnels.</span>
+            <span class="e-title" data-i18n="cv.exp2.title">Graphiste · Web Design</span>
+            <span class="e-org" data-i18n="cv.exp2.org">Indépendant — Annecy, Nyon &amp; Genève</span>
+            <span class="e-date" data-i18n="cv.exp2.date">2023 – 2024</span>
+            <div class="e-desc">
+              <ul class="e-list">
+                <li data-i18n="cv.exp2.li1">~1 mission client/mois gérée en autonomie, du brief à la livraison.</li>
+                <li data-i18n="cv.exp2.li2">Conception de sites web sur mesure (UX/UI, intégration), identités de marque et supports print &amp; digital.</li>
+                <li data-i18n="cv.exp2.li3">Développement de projets digitaux personnels en parallèle.</li>
+              </ul>
+            </div>
           </div>
           <div class="entry">
-            <span class="e-title">Indépendant — Annecy, Nyon &amp; Genève</span>
-            <span class="e-org">Graphiste · Web Design</span>
-            <span class="e-date">2023 – 2024</span>
-            <span class="e-desc">Développement de sites web. Création d'identité de marque. Création de divers supports de communication web et print.</span>
-          </div>
-          <div class="entry">
-            <span class="e-title">Lake Pub — Sevrier</span>
-            <span class="e-org">Assistant direction artistique</span>
-            <span class="e-date">2021 – 2023</span>
-            <span class="e-desc">Réalisation et évolution de l'identité visuelle. Création de supports de communication visuelle. Promotion d'évènements sur les réseaux sociaux. Conception d'interfaces web et mobiles intuitives. Participation à la stratégie de développement de l'entreprise.</span>
+            <span class="e-title" data-i18n="cv.exp3.title">Assistant direction artistique</span>
+            <span class="e-org" data-i18n="cv.exp3.org">Lake Pub — Sevrier</span>
+            <span class="e-date" data-i18n="cv.exp3.date">2021 – 2023</span>
+            <div class="e-desc">
+              <ul class="e-list">
+                <li data-i18n="cv.exp3.li1">Création des visuels promo pour ~2 événements/semaine + temps forts festifs.</li>
+                <li data-i18n="cv.exp3.li2">Réalisation et évolution de l'identité visuelle de l'établissement.</li>
+                <li data-i18n="cv.exp3.li3">Conception d'interfaces web &amp; mobile orientées expérience utilisateur (UX/UI).</li>
+                <li data-i18n="cv.exp3.li4">Participation à la stratégie de développement de l'entreprise.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="block">
-          <p class="cv-label">Formations</p>
+          <p class="cv-label" data-i18n="cv.edu">Formations</p>
           <div class="entry">
-            <span class="e-title">Bachelor design interactif web &amp; mobile</span>
+            <span class="e-title" data-i18n="cv.edu1.title">Bachelor design interactif web &amp; mobile</span>
             <span class="e-org">Les Gobelins</span>
             <span class="e-date">2020 – 2023</span>
           </div>
           <div class="entry">
-            <span class="e-title">BTS Négociation et Relation Client</span>
+            <span class="e-title" data-i18n="cv.edu2.title">BTS Négociation et Relation Client</span>
             <span class="e-org">Gaspard Monge</span>
             <span class="e-date">2016 – 2018</span>
+            <div class="e-desc"><em data-i18n="cv.edu2.note">Bases commerciales, relation client et marketing — socle utile au pilotage des campagnes.</em></div>
           </div>
         </div>
 
         <div class="block">
-          <p class="cv-label">Compétences</p>
+          <p class="cv-label" data-i18n="cv.skills">Compétences</p>
           <div class="chips">
-            <span class="chip">Design graphique</span>
-            <span class="chip">Outils CRM</span>
-            <span class="chip">Web Design</span>
-            <span class="chip">UX &amp; UI Design</span>
-            <span class="chip">IA générative</span>
-            <span class="chip">Gestion de projet</span>
-            <span class="chip">Marketing digital</span>
+            <span class="chip" data-i18n="cv.skill1">Direction artistique</span>
+            <span class="chip" data-i18n="cv.skill2">UX/UI Design</span>
+            <span class="chip" data-i18n="cv.skill3">Design graphique</span>
+            <span class="chip" data-i18n="cv.skill4">Outils CRM</span>
+            <span class="chip" data-i18n="cv.skill5">Création de contenu digital</span>
+            <span class="chip" data-i18n="cv.skill6">Montage vidéo</span>
+            <span class="chip" data-i18n="cv.skill7">Marketing digital</span>
+            <span class="chip" data-i18n="cv.skill8">IA générative</span>
           </div>
         </div>
 
         <div class="block">
-          <p class="cv-label">Outils</p>
+          <p class="cv-label" data-i18n="cv.tools">Logiciels</p>
+          <p class="tool-group" data-i18n="cv.tools.design">Design</p>
           <div class="toolset">
+            <span class="toolchip"><span class="tb" style="background:#F24E1E;color:#fff">Fi</span>Figma</span>
             <span class="toolchip"><span class="tb" style="background:#31A8FF;color:#001E36">Ps</span>Photoshop</span>
             <span class="toolchip"><span class="tb" style="background:#FF9A00;color:#1A0A00">Ai</span>Illustrator</span>
+            <span class="toolchip"><span class="tb" style="background:#FF3366;color:#2B0008">Id</span>InDesign</span>
+            <span class="toolchip"><span class="tb" style="background:#00C4CC;color:#06363B">Cv</span>Canva</span>
             <span class="toolchip"><span class="tb" style="background:#9999FF;color:#16006B">Pr</span>Premiere Pro</span>
             <span class="toolchip"><span class="tb" style="background:#9999FF;color:#16006B">Ae</span>After Effects</span>
-            <span class="toolchip"><span class="tb" style="background:#FF3366;color:#2B0008">Id</span>InDesign</span>
-            <span class="toolchip"><span class="tb" style="background:#00A1E0;color:#fff">sf</span>Salesforce</span>
-            <span class="toolchip"><span class="tb" style="background:#FFC110;color:#3A2C00">bh</span>Beehiiv</span>
-            <span class="toolchip"><span class="tb" style="background:#21759B;color:#fff">Wp</span>WordPress</span>
-            <span class="toolchip"><span class="tb" style="background:#F24E1E;color:#fff">Fi</span>Figma</span>
+          </div>
+          <p class="tool-group" data-i18n="cv.tools.dev">Développement</p>
+          <div class="toolset">
             <span class="toolchip"><span class="tb" style="background:#D97757;color:#fff">CC</span>Claude Code</span>
+            <span class="toolchip"><span class="tb" style="background:#E34F26;color:#fff">H5</span>HTML</span>
+            <span class="toolchip"><span class="tb" style="background:#1572B6;color:#fff">C3</span>CSS</span>
+            <span class="toolchip"><span class="tb" style="background:#21759B;color:#fff">Wp</span>WordPress</span>
+          </div>
+          <p class="tool-group" data-i18n="cv.tools.mgmt">Gestion &amp; marketing</p>
+          <div class="toolset">
+            <span class="toolchip"><span class="tb" style="background:#00A1E0;color:#fff">sf</span>Salesforce</span>
             <span class="toolchip"><span class="tb" style="background:#0A0A0A;color:#fff">N</span>Notion</span>
-            <span class="toolchip"><span class="tb" style="background:#00C4CC;color:#06363B">Cv</span>Canva</span>
-            <span class="toolchip"><span class="tb" style="background:#24292E;color:#fff">GH</span>GitHub</span>
+            <span class="toolchip"><span class="tb" style="background:#0079BF;color:#fff">Tr</span>Trello</span>
+            <span class="toolchip"><span class="tb" style="background:#4A154B;color:#fff">Sk</span>Slack</span>
+            <span class="toolchip"><span class="tb" style="background:#B7472A;color:#fff">Pp</span>PowerPoint</span>
+            <span class="toolchip"><span class="tb" style="background:#217346;color:#fff">Xl</span>Excel</span>
           </div>
         </div>
 
         <div class="block">
-          <p class="cv-label">Langues</p>
-          <div class="kv"><b>Français</b> Maternelle</div>
-          <div class="kv"><b>Anglais</b> Intermédiaire</div>
+          <p class="cv-label" data-i18n="cv.langs">Langues</p>
+          <div class="kv"><b data-i18n="cv.lang.fr">Français</b> <span data-i18n="cv.lang.fr.level">Maternelle</span></div>
+          <div class="kv"><b data-i18n="cv.lang.en">Anglais</b> <span data-i18n="cv.lang.en.level">Intermédiaire</span></div>
         </div>
 
         <div class="block">
-          <p class="cv-label">Hobbies</p>
-          <p class="about">Activités outdoor · Investissement &amp; immobilier · Innovation technologique · Arts visuels</p>
+          <p class="cv-label" data-i18n="cv.hobbies">Hobbies</p>
+          <p class="about" data-i18n="cv.hobbies.body">🐱 Amoureux des animaux · Activités outdoor · Investissement &amp; immobilier · Innovation technologique · Arts visuels</p>
         </div>
 
         <div class="block" style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn" href="https://sublizme.com/index.html#projects" target="_blank" rel="noopener">Voir le portfolio
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-          <a class="btn" href="assets/Benjamin Hocq - CV.pdf" download>Télécharger le CV
+          <a class="btn" href="assets/Benjamin Hocq - CV.pdf" download><span data-i18n="cv.download">Télécharger le CV</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0 5-5m-5 5-5-5M5 20h14"/></svg>
           </a>
         </div>
@@ -330,8 +385,8 @@
     <!-- ════════════════════ PROJETS ════════════════════ -->
     <section class="view" id="view-projets">
       <div class="feed" data-screen-label="Projets">
-        <h2 class="sec-title">Projets</h2>
-        <p class="sec-lead">Une sélection de projets — branding, identité visuelle, web design et UX/UI — réalisés ces dernières années.</p>
+        <h2 class="sec-title" data-i18n="projects.title">Projets</h2>
+        <p class="sec-lead" data-i18n="projects.lead">Une sélection de projets — branding, identité visuelle, web design et UX/UI — réalisés ces dernières années.</p>
 
         <div class="proj-cards" id="proj-list"></div>
       </div>
@@ -341,33 +396,34 @@
     <section class="view" id="view-projet">
       <div class="feed" data-screen-label="Fiche projet">
         <div class="detail-top">
-          <button class="back-btn" data-back aria-label="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
-          <span class="dt-label">Projets</span>
+          <button class="back-btn" data-back data-i18n-aria="projet.back" aria-label="Retour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 6-6 6 6 6"/></svg></button>
+          <span class="dt-label" data-i18n="projets.title">Projets</span>
         </div>
         <article class="detail-card" id="pd-content"></article>
+        <div id="pd-nav-host"></div>
       </div>
     </section>
 
     <!-- ════════════════════ CONTACT ════════════════════ -->
     <section class="view" id="view-contact">
       <div class="feed" data-screen-label="Contact">
-        <h2 class="sec-title">Contact</h2>
-        <p class="sec-lead">Un projet, une question, ou juste envie de dire bonjour ? Écrivez-moi.</p>
+        <h2 class="sec-title" data-i18n="contact.title">Contact</h2>
+        <p class="sec-lead" data-i18n="contact.lead">Un projet, une question, ou juste envie de dire bonjour ? Écrivez-moi.</p>
 
         <div class="links">
           <a class="link-row" href="mailto:benjamin.hocq@outlook.com">
-            <span class="lr-k">Email</span>
+            <span class="lr-k" data-i18n="contact.email">Email</span>
             <span class="lr-v">benjamin.hocq@outlook.com <span class="arr">↗</span></span>
           </a>
-          <a class="link-row" href="tel:+33788310031">
-            <span class="lr-k">Téléphone</span>
-            <span class="lr-v">+33 7 88 31 00 31 <span class="arr">↗</span></span>
+          <a class="link-row" href="tel:+41772813052">
+            <span class="lr-k" data-i18n="contact.phone">Téléphone</span>
+            <span class="lr-v">+41 77 281 30 52 <span class="arr">↗</span></span>
           </a>
           <a class="link-row" href="https://www.benjaminhocq.com" target="_blank" rel="noopener">
-            <span class="lr-k">Site web</span>
+            <span class="lr-k" data-i18n="contact.web">Site web</span>
             <span class="lr-v">www.benjaminhocq.com <span class="arr">↗</span></span>
           </a>
-          <a class="link-row" href="#">
+          <a class="link-row" href="https://www.linkedin.com/in/benjamin-hocq-b3a06114b/" target="_blank" rel="noopener">
             <span class="lr-k">LinkedIn</span>
             <span class="lr-v">Benjamin Hocq <span class="arr">↗</span></span>
           </a>
@@ -375,26 +431,26 @@
 
         <form class="form" id="contact-form">
           <div class="row2">
-            <div class="field"><label>Nom</label><input type="text" name="name" placeholder="Votre nom" required></div>
-            <div class="field"><label>Email</label><input type="email" name="email" placeholder="vous@email.com" required></div>
+            <div class="field"><label data-i18n="contact.name">Nom</label><input type="text" name="name" data-i18n-placeholder="contact.name.ph" placeholder="Votre nom" required></div>
+            <div class="field"><label data-i18n="contact.emailfield">Email</label><input type="email" name="email" data-i18n-placeholder="contact.emailfield.ph" placeholder="vous@email.com" required></div>
           </div>
-          <div class="field"><label>Message</label><textarea name="message" placeholder="Parlez-moi de votre projet…" required></textarea></div>
-          <button type="submit" class="btn send">Envoyer
+          <div class="field"><label data-i18n="contact.message">Message</label><textarea name="message" data-i18n-placeholder="contact.message.ph" placeholder="Parlez-moi de votre projet…" required></textarea></div>
+          <button type="submit" class="btn send"><span data-i18n="contact.send">Envoyer</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </button>
-          <p class="sent-msg" id="form-sent">Merci ! Votre message a bien été envoyé.</p>
+          <p class="sent-msg" id="form-sent" data-i18n="contact.sent">Merci ! Votre message a bien été envoyé.</p>
         </form>
 
         <footer class="footer">
           <div class="socials">
-            <a class="soc-btn" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.15" fill="currentColor" stroke="none"/></svg></a>
-            <a class="soc-btn" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
-            <a class="soc-btn" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 8.5h2V5.5h-2.4C12.9 5.5 12 6.9 12 8.7V10H9.8v3H12v8h3v-8h2.3l.4-3H15v-1.2c0-.7.2-1.3 1.3-1.3z"/></svg></a>
+            <a class="soc-btn" href="tel:+41772813052" data-i18n-aria="contact.phone" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+            <a class="soc-btn" href="mailto:benjamin.hocq@outlook.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
+            <a class="soc-btn" href="https://www.linkedin.com/in/benjamin-hocq-b3a06114b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
           </div>
           <div class="signature">Benjamin Hocq</div>
-          <p class="thanks">Merci de votre visite.</p>
-          <p class="bye">Explorez à votre rythme. À très vite.</p>
-          <p class="copy">© 2026 Benjamin Hocq</p>
+          <p class="thanks" data-i18n="footer.thanks">Merci de votre visite.</p>
+          <p class="bye" data-i18n="footer.bye">Explorez à votre rythme. À très vite.</p>
+          <p class="copy" data-i18n="footer.copy">© 2026 Benjamin Hocq</p>
         </footer>
 
       </div>
@@ -525,7 +581,6 @@
   <script src="assets/js/app.js"></script>
   <script src="assets/js/settings.js"></script>
   <script src="assets/js/scroll.js"></script>
-  <script src="assets/js/logo-marquee.js"></script>
   <script src="assets/js/scroll-tilt.js"></script>
 </body>
 </html>
