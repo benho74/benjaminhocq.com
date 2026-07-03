@@ -750,25 +750,24 @@ button{ font-family: inherit; }
   pointer-events: none;
   background: #0a0a0a;
 }
-/* Bordure sombre + reflet iridescent qui balaie le contour (brillance) */
+/* Bordure entièrement iridescente — les couleurs défilent tout autour */
 .nav-shine::before{
   content: ""; position: absolute; inset: -60%;
   background: conic-gradient(from 0deg,
-    #34373f 0deg,
-    #34373f 28deg,
-    #4f86ff 58deg,
-    #9a7bff 78deg,
-    #ff9ec9 92deg,
-    #ffffff 102deg,
-    #d7e4ff 112deg,
-    #34373f 150deg,
-    #34373f 214deg,
-    #6b74a0 248deg,
-    #cfd6ee 268deg,
-    #6b74a0 288deg,
-    #34373f 322deg,
-    #34373f 360deg);
+    #3f4f88,
+    #5b7ce0,
+    #8f86f0,
+    #b57ad8,
+    #d98fc0,
+    #cdd6f5,
+    #7fa8ec,
+    #5f7fd6,
+    #6f6fd0,
+    #9a78d0,
+    #6f8ad8,
+    #3f4f88);
   animation: nav-shine-rot 11s linear infinite;
+  filter: saturate(1.04) brightness(1.02);
 }
 /* Pastille sombre interne : masque le centre, ne garde que le bord métallique */
 .nav-inner{
