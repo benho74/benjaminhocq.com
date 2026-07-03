@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "benjaminhocq",
-      "runtimeExecutable": "ruby",
-      "runtimeArgs": ["serve.rb"],
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/private/tmp/claude-501/-Users-vivasante-Desktop-Perso-Projets-Perso-BH-Claude-Code---BH/3d202d4e-ad0e-4da9-bf8f-b24a42ee42c9/scratchpad/server.py"],
       "port": 7878
     }
   ]
