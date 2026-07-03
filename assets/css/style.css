@@ -750,24 +750,23 @@ button{ font-family: inherit; }
   pointer-events: none;
   background: #0a0a0a;
 }
-/* Bordure entièrement iridescente — les couleurs défilent tout autour */
+/* Bordure iridescente continue (aucun trou sombre) — couleurs mutées
+   qui défilent tout autour, y compris en haut et en bas. */
 .nav-shine::before{
   content: ""; position: absolute; inset: -60%;
-  background: conic-gradient(from 0deg,
-    #3f4f88,
-    #5b7ce0,
-    #8f86f0,
-    #b57ad8,
-    #d98fc0,
-    #cdd6f5,
-    #7fa8ec,
-    #5f7fd6,
-    #6f6fd0,
-    #9a78d0,
-    #6f8ad8,
-    #3f4f88);
+  background: conic-gradient(from 200deg,
+    #3b4054,
+    #46588a,
+    #6f97dc,
+    #5f6cae,
+    #6a5f9e,
+    #79608e,
+    #515a86,
+    #46588a,
+    #3f4860,
+    #3b4054);
   animation: nav-shine-rot 11s linear infinite;
-  filter: saturate(1.04) brightness(1.02);
+  filter: saturate(1.02);
 }
 /* Pastille sombre interne : masque le centre, ne garde que le bord métallique */
 .nav-inner{
