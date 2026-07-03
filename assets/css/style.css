@@ -119,7 +119,7 @@ img{ display:block; max-width:100%; }
 button{ font-family: inherit; }
 
 /* ── App scroll container ───────────────── */
-.app{ min-height: 100vh; }
+.app{ min-height: 100vh; overflow-x: hidden; }
 
 /* ── Views (pages) ──────────────────────── */
 .view{ display: none; }
@@ -259,7 +259,7 @@ button{ font-family: inherit; }
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
           mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
-.logo-row{ position: relative; overflow: hidden; width: 100%; }
+.logo-row{ position: relative; overflow: hidden; width: 100%; contain: layout paint; }
 .logo-track{
   display: flex; gap: 56px; width: max-content; padding: 4px 0;
   animation: logo-marquee-left 60s linear infinite;
@@ -623,7 +623,12 @@ button{ font-family: inherit; }
 }
 .testi .tn{ font-size: 15px; font-weight: 600; }
 @media (max-width: 760px){
-  .testi-masonry{ columns: 1; max-height: 560px; }
+  .testi-masonry{
+    columns: 1;
+    max-height: 420px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 96%);
+            mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 96%);
+  }
 }
 
 /* ===========================================================
@@ -886,6 +891,7 @@ button{ font-family: inherit; }
   .nav a .tip{ display:none; }
   .blur-fade{ height: 130px; }
   .feed{ padding-bottom: 150px; }
+  .tilt-scroll{ transform-origin: 50% 50%; }
   .proj-card{ grid-template-columns: 1fr; }
   .proj-card image-slot{ width:100%; height: 190px; }
   .proj-card .pc-cover{ width: 100%; aspect-ratio: 16 / 10; }
