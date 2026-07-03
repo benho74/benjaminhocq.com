@@ -189,11 +189,16 @@
 
       const bl = eOut * EXIT_BLUR;
 
-      s.el.style.transform =
-        `perspective(${PERSPECTIVE}px)` +
-        ` translate3d(0, ${ty.toFixed(2)}px, ${tz.toFixed(1)}px)` +
-        ` rotateX(${rx.toFixed(2)}deg)` +
-        ` scale(${sc.toFixed(3)})`;
+      // Sur mobile : pas de perspective/rotateX pour éviter l'overflow horizontal
+      if (window.innerWidth <= 760) {
+        s.el.style.transform = `translateY(${ty.toFixed(2)}px) scale(${sc.toFixed(3)})`;
+      } else {
+        s.el.style.transform =
+          `perspective(${PERSPECTIVE}px)` +
+          ` translate3d(0, ${ty.toFixed(2)}px, ${tz.toFixed(1)}px)` +
+          ` rotateX(${rx.toFixed(2)}deg)` +
+          ` scale(${sc.toFixed(3)})`;
+      }
       s.el.style.opacity = op.toFixed(3);
       s.el.style.filter = bl > 0.05 ? `blur(${bl.toFixed(2)}px)` : '';
     }
