@@ -31,6 +31,11 @@
     });
     setNav(navName || name);
     scrollTop();
+    // Réactive le tilt-scroll pour la vue qui vient d'être affichée
+    // (l'IO ne re-fire pas automatiquement après display:none → block)
+    requestAnimationFrame(function(){
+      if (window.tiltActivate) window.tiltActivate(views[name]);
+    });
   }
 
   // ── Données projets ──────────────────────

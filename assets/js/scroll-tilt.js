@@ -204,5 +204,17 @@
 
   addTargets(root);
   window.applyScrollTilt = addTargets;
+
+  // Appelé lors du changement de vue : réactive les éléments du container
+  // et force un recalcul (l'IO ne re-fire pas toujours sur display:none→block).
+  window.tiltActivate = (container) => {
+    for (const s of state) {
+      if (!container || container.contains(s.el)) s.visible = true;
+    }
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = 0;
+    update();
+  };
+
   update();
 })();
