@@ -750,14 +750,25 @@ button{ font-family: inherit; }
   pointer-events: none;
   background: #0a0a0a;
 }
-/* Dégradé métal argenté en rotation (reflets brillants qui tournent) */
+/* Bordure sombre + reflet iridescent qui balaie le contour (brillance) */
 .nav-shine::before{
   content: ""; position: absolute; inset: -60%;
-  background: conic-gradient(from 90deg,
-    #7f88a3, #ffffff, #c4cce2, #ffffff, #aeb7d2,
-    #f2e8ee, #ffffff, #b9c2dc, #ffffff, #9aa3bf, #7f88a3);
-  animation: nav-shine-rot 5s linear infinite;
-  filter: brightness(1.1) contrast(1.06);
+  background: conic-gradient(from 0deg,
+    #34373f 0deg,
+    #34373f 28deg,
+    #4f86ff 58deg,
+    #9a7bff 78deg,
+    #ff9ec9 92deg,
+    #ffffff 102deg,
+    #d7e4ff 112deg,
+    #34373f 150deg,
+    #34373f 214deg,
+    #6b74a0 248deg,
+    #cfd6ee 268deg,
+    #6b74a0 288deg,
+    #34373f 322deg,
+    #34373f 360deg);
+  animation: nav-shine-rot 11s linear infinite;
 }
 /* Pastille sombre interne : masque le centre, ne garde que le bord métallique */
 .nav-inner{
