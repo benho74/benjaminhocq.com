@@ -750,23 +750,29 @@ button{ font-family: inherit; }
   pointer-events: none;
   background: #0a0a0a;
 }
-/* Bordure iridescente continue (aucun trou sombre) — couleurs mutées
-   qui défilent tout autour, y compris en haut et en bas. */
+/* Bordure iridescente lisse (couleurs image 1), FIXE dans l'espace pour
+   ne jamais créer l'effet de coupure haut/bas. Le mouvement vient d'un
+   léger glissement de teinte, pas d'une rotation. */
 .nav-shine::before{
-  content: ""; position: absolute; inset: -60%;
-  background: conic-gradient(from 200deg,
-    #3b4054,
-    #46588a,
-    #6f97dc,
-    #5f6cae,
-    #6a5f9e,
-    #79608e,
-    #515a86,
-    #46588a,
-    #3f4860,
-    #3b4054);
-  animation: nav-shine-rot 11s linear infinite;
-  filter: saturate(1.02);
+  content: ""; position: absolute; inset: 0;
+  background: conic-gradient(from 210deg,
+    #3f4f88,
+    #5b7ce0,
+    #8f86f0,
+    #b57ad8,
+    #d98fc0,
+    #cdd6f5,
+    #7fa8ec,
+    #5f7fd6,
+    #6f6fd0,
+    #9a78d0,
+    #6f8ad8,
+    #3f4f88);
+  animation: nav-hue 7s ease-in-out infinite;
+}
+@keyframes nav-hue{
+  0%, 100%{ filter: hue-rotate(-16deg) saturate(1.03); }
+  50%{ filter: hue-rotate(20deg) saturate(1.03); }
 }
 /* Pastille sombre interne : masque le centre, ne garde que le bord métallique */
 .nav-inner{
@@ -780,7 +786,6 @@ button{ font-family: inherit; }
 }
 /* Halo doux autour du menu */
 .nav{ box-shadow: 0 0 14px oklch(0.72 0.03 265 / 0.14); }
-@keyframes nav-shine-rot{ to{ transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce){
   .nav-shine::before{ animation: none; }
 }
