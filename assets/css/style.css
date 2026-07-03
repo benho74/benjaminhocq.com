@@ -34,7 +34,6 @@
 :root[data-theme="light"] ::selection{ background: oklch(0.18 0 0); color: oklch(0.99 0 0); }
 /* Nav adaptée au thème clair */
 :root[data-theme="light"] .nav{ background: transparent; border-color: transparent; }
-:root[data-theme="light"] .nav-shine{ background: #d8dae2; }
 :root[data-theme="light"] .nav-inner{
   background: linear-gradient(180deg, oklch(0.98 0 0 / 0.9) 0%, oklch(0.93 0 0 / 0.94) 100%);
 }
@@ -738,24 +737,25 @@ button{ font-family: inherit; }
   display:flex; flex-direction: column; gap: 4px; padding: 9px;
   background: transparent; border: none;
   border-radius: 24px;
+  box-shadow: 0 0 14px oklch(0.72 0.03 265 / 0.14);
 }
-/* Contour liquid-metal (CSS pur) — même principe que le bouton de référence :
-   une couche métallique remplit TOUT le nav, et une pastille sombre (.nav-inner)
-   posée dessus ne laisse voir le métal que sur ~2px de bord. */
+/* Bord iridescent tournant — technique "rotating gradient button" :
+   le conic-gradient est redessiné à chaque frame via la custom property
+   --r (angle animé), jamais via transform:rotate() sur un calque carré
+   surdimensionné. Résultat : la couleur couvre TOUJOURS tout le rectangle
+   du nav, y compris en haut/bas d'une barre étroite — pas de coupure. */
+@property --r{
+  syntax: '<angle>';
+  inherit: false;
+  initial-value: 0deg;
+}
 .nav-shine{
   position: absolute; inset: 0;
   border-radius: 24px;
   z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  background: #0a0a0a;
-}
-/* Bordure iridescente lisse (couleurs image 1), FIXE dans l'espace pour
-   ne jamais créer l'effet de coupure haut/bas. Le mouvement vient d'un
-   léger glissement de teinte, pas d'une rotation. */
-.nav-shine::before{
-  content: ""; position: absolute; inset: 0;
-  background: conic-gradient(from 210deg,
+  background: conic-gradient(from var(--r),
     #3f4f88,
     #5b7ce0,
     #8f86f0,
@@ -768,13 +768,10 @@ button{ font-family: inherit; }
     #9a78d0,
     #6f8ad8,
     #3f4f88);
-  animation: nav-hue 7s ease-in-out infinite;
+  animation: nav-rotate 8s linear infinite;
 }
-@keyframes nav-hue{
-  0%, 100%{ filter: hue-rotate(-16deg) saturate(1.03); }
-  50%{ filter: hue-rotate(20deg) saturate(1.03); }
-}
-/* Pastille sombre interne : masque le centre, ne garde que le bord métallique */
+@keyframes nav-rotate{ to{ --r: 360deg; } }
+/* Pastille sombre interne : masque le centre, ne garde que le bord coloré */
 .nav-inner{
   position: absolute; inset: 2px;
   border-radius: 22px;
@@ -784,10 +781,8 @@ button{ font-family: inherit; }
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   box-shadow: inset 0 1px 1px oklch(1 0 0 / 0.05);
 }
-/* Halo doux autour du menu */
-.nav{ box-shadow: 0 0 14px oklch(0.72 0.03 265 / 0.14); }
 @media (prefers-reduced-motion: reduce){
-  .nav-shine::before{ animation: none; }
+  .nav-shine{ animation: none; }
 }
 .nav a{
   position: relative; z-index: 2; width: 44px; height: 44px; border-radius: 15px;
