@@ -178,6 +178,8 @@
         + '<div class="pc-meta">' + esc(p.cat) + ' — ' + esc(p.date) + '</div></div>'
         + '</article>';
     }).join('');
+    // Les cartes sont recréées via innerHTML — on les ré-enregistre dans scroll-tilt
+    if (typeof window.applyScrollTilt === 'function') window.applyScrollTilt(host);
   }
 
   // ── Fiche détail ─────────────────────────
