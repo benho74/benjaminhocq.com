@@ -514,6 +514,18 @@ button{ font-family: inherit; }
   width: 100%; display: block; border-radius: 16px; border: 1px solid var(--border);
   background: var(--surface-2);
 }
+/* Vulpo — recadrage des visuels trop hauts */
+.pd-media img[src*="vulpo-cover"]{
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+.pd-media img[src*="vulpo-semnoz"],
+.pd-media img[src*="vulpo-mid"]{
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Navigation prev/next entre projets */
 .pd-nav{
@@ -539,8 +551,10 @@ button{ font-family: inherit; }
   overflow-wrap: anywhere;
 }
 @media (max-width: 560px){
-  .pd-nav{ grid-template-columns: 1fr; }
-  .pd-nav-btn--next{ align-items: flex-start; text-align: left; }
+  .pd-nav{ gap: 10px; }
+  .pd-nav-btn{ padding: 12px 14px; min-height: 68px; min-width: 0; }
+  .pd-nav-dir{ font-size: 10px; letter-spacing: 0.12em; gap: 4px; }
+  .pd-nav-title{ font-size: 14px; line-height: 1.2; }
 }
 
 /* ===========================================================
@@ -722,6 +736,50 @@ button{ font-family: inherit; }
   display:flex; flex-direction: column; gap: 4px; padding: 9px;
   background: oklch(0.12 0 0 / 0.72); border: 1px solid oklch(0.28 0 0 / 0.6);
   border-radius: 24px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+}
+/* Contour brillant animé — anneau iridescent (liquid metal) autour du menu.
+   Fallback CSS toujours visible ; le canvas WebGL vient l'enrichir si dispo. */
+.nav-shine{
+  position: absolute; inset: -1.5px;
+  border-radius: 26px;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  padding: 2px;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+          mask-composite: exclude;
+}
+/* Dégradé iridescent en rotation (fallback + base) */
+.nav-shine::before{
+  content: ""; position: absolute; inset: -60%;
+  background: conic-gradient(from 0deg,
+    #b9c4ff, #ff9db4, #e6e8f0, #ffd9c2,
+    #9fd0ff, #d8c4ff, #ffb0c8, #e6e8f0, #b9c4ff);
+  animation: nav-shine-rot 6s linear infinite;
+  filter: saturate(1.15) brightness(1.05);
+}
+/* Canvas du shader liquid-metal (au-dessus du fallback si monté) */
+.nav-shine canvas{
+  position: absolute !important; inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  display: block !important; z-index: 1;
+  border-radius: inherit;
+}
+.nav-shine.is-ready::before{ opacity: 0; transition: opacity .5s ease; }
+/* Bordure classique du nav effacée : c'est l'anneau qui la remplace */
+.nav{ border-color: transparent; }
+@keyframes nav-shine-rot{ to{ transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce){
+  .nav-shine::before{ animation: none; }
+}
+@media (max-width: 760px){
+  .nav-shine{ border-radius: 24px; }
 }
 .nav a{
   position: relative; width: 44px; height: 44px; border-radius: 15px;
