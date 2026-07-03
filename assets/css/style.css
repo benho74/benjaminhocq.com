@@ -33,8 +33,10 @@
 }
 :root[data-theme="light"] ::selection{ background: oklch(0.18 0 0); color: oklch(0.99 0 0); }
 /* Nav adaptée au thème clair */
-:root[data-theme="light"] .nav{
-  background: oklch(0.97 0 0 / 0.72); border-color: oklch(0.80 0 0 / 0.6);
+:root[data-theme="light"] .nav{ background: transparent; border-color: transparent; }
+:root[data-theme="light"] .nav-shine{ background: #d8dae2; }
+:root[data-theme="light"] .nav-inner{
+  background: linear-gradient(180deg, oklch(0.98 0 0 / 0.9) 0%, oklch(0.93 0 0 / 0.94) 100%);
 }
 :root[data-theme="light"] .nav a:hover{ background: oklch(0.88 0 0 / 0.7); }
 :root[data-theme="light"] .nav a.active{ background: oklch(0.84 0 0 / 0.85); }
@@ -734,37 +736,30 @@ button{ font-family: inherit; }
 .nav{
   position: fixed; left: 22px; top: 50%; transform: translateY(-50%); z-index: 60;
   display:flex; flex-direction: column; gap: 4px; padding: 9px;
-  background: oklch(0.12 0 0 / 0.72); border: 1px solid oklch(0.28 0 0 / 0.6);
-  border-radius: 24px; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  background: transparent; border: none;
+  border-radius: 24px;
 }
-/* Contour brillant animé — anneau iridescent (liquid metal) autour du menu.
-   Fallback CSS toujours visible ; le canvas WebGL vient l'enrichir si dispo. */
+/* Contour liquid-metal — même principe que le bouton de référence :
+   le shader remplit TOUT le nav (couche du fond), et une pastille sombre
+   (.nav-inner) posée dessus ne laisse voir le métal que sur ~2px de bord. */
 .nav-shine{
-  position: absolute; inset: -1.5px;
-  border-radius: 26px;
-  z-index: 1;
+  position: absolute; inset: 0;
+  border-radius: 24px;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  padding: 2px;
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-          mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-          mask-composite: exclude;
+  background: #0a0a0a;
 }
-/* Dégradé iridescent en rotation (fallback + base) */
+/* Fallback CSS (métal argenté brillant) si le shader ne monte pas */
 .nav-shine::before{
   content: ""; position: absolute; inset: -60%;
-  background: conic-gradient(from 0deg,
-    #b9c4ff, #ff9db4, #e6e8f0, #ffd9c2,
-    #9fd0ff, #d8c4ff, #ffb0c8, #e6e8f0, #b9c4ff);
-  animation: nav-shine-rot 6s linear infinite;
-  filter: saturate(1.15) brightness(1.05);
+  background: conic-gradient(from 90deg,
+    #8890a8, #ffffff, #cfd6ea, #f3e9ef, #eef2ff,
+    #ffffff, #c3ccdf, #ffffff, #8890a8);
+  animation: nav-shine-rot 5s linear infinite;
+  filter: brightness(1.08) contrast(1.05);
 }
-/* Canvas du shader liquid-metal (au-dessus du fallback si monté) */
+/* Canvas du shader liquid-metal (recouvre le fallback si monté) */
 .nav-shine canvas{
   position: absolute !important; inset: 0 !important;
   width: 100% !important; height: 100% !important;
@@ -772,17 +767,22 @@ button{ font-family: inherit; }
   border-radius: inherit;
 }
 .nav-shine.is-ready::before{ opacity: 0; transition: opacity .5s ease; }
-/* Bordure classique du nav effacée : c'est l'anneau qui la remplace */
-.nav{ border-color: transparent; }
+/* Pastille sombre interne : masque le centre, ne garde que le bord métallique */
+.nav-inner{
+  position: absolute; inset: 2px;
+  border-radius: 22px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, oklch(0.16 0 0 / 0.94) 0%, oklch(0.10 0 0 / 0.96) 100%);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  box-shadow: inset 0 1px 1px oklch(1 0 0 / 0.04);
+}
 @keyframes nav-shine-rot{ to{ transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce){
   .nav-shine::before{ animation: none; }
 }
-@media (max-width: 760px){
-  .nav-shine{ border-radius: 24px; }
-}
 .nav a{
-  position: relative; width: 44px; height: 44px; border-radius: 15px;
+  position: relative; z-index: 2; width: 44px; height: 44px; border-radius: 15px;
   display:flex; align-items:center; justify-content:center; color: var(--faint);
   transition: color .18s var(--ease), background .18s var(--ease); cursor:pointer;
 }
@@ -866,6 +866,8 @@ button{ font-family: inherit; }
 /* ── Responsive ─────────────────────────── */
 @media (max-width: 760px){
   .nav{ left:50%; top:auto; bottom: 16px; transform: translateX(-50%); flex-direction:row; border-radius: 22px; }
+  .nav-shine, .nav-inner{ border-radius: 22px; }
+  .nav-inner{ border-radius: 20px; }
   .nav a .tip{ display:none; }
   .blur-fade{ height: 130px; }
   .feed{ padding-bottom: 150px; }
