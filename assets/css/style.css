@@ -764,10 +764,6 @@ button{ font-family: inherit; }
     #4f7bff 54deg,
     #9d5cff 90deg,
     transparent 130deg,
-    transparent 214deg,
-    #5c9bff 248deg,
-    #b45cff 290deg,
-    transparent 326deg,
     transparent 360deg);
   animation: nav-rotate 16s linear infinite;
   /* on ne garde que l'anneau de 2px (le centre reste transparent
@@ -873,6 +869,11 @@ button{ font-family: inherit; }
 }
 @media (prefers-reduced-motion: reduce){
   .testi-track{ animation: none; }
+}
+
+/* Nav — scale subtil au survol (desktop uniquement) */
+@media (min-width: 761px){
+  .nav:hover{ transform: translateY(-50%) scale(1.04); }
 }
 
 /* ── Responsive ─────────────────────────── */
