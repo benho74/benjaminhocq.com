@@ -99,7 +99,7 @@
       "cv.lang.fr": "Français", "cv.lang.fr.level": "Maternelle",
       "cv.lang.en": "Anglais", "cv.lang.en.level": "Intermédiaire",
       "cv.hobbies": "Hobbies",
-      "cv.hobbies.body": "🐱 Amoureux des animaux · Activités outdoor · Investissement & immobilier · Innovation technologique · Arts visuels",
+      "cv.hobbies.body": "Activités outdoor · Investissement & immobilier · Innovation technologique · Arts visuels",
       "cv.download": "Télécharger le CV",
 
       "projects.title": "Projets",
@@ -196,7 +196,7 @@
       "cv.lang.fr": "French", "cv.lang.fr.level": "Native",
       "cv.lang.en": "English", "cv.lang.en.level": "Intermediate",
       "cv.hobbies": "Interests",
-      "cv.hobbies.body": "🐱 Animal lover · Outdoor activities · Investment & real estate · Tech innovation · Visual arts",
+      "cv.hobbies.body": "Outdoor activities · Investment & real estate · Tech innovation · Visual arts",
       "cv.download": "Download CV",
 
       "projects.title": "Projects",
