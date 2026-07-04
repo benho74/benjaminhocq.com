@@ -197,7 +197,7 @@
     var cover = p.media[0] ? mediaHtml(p.media[0]) : '';
     var rest = p.media.slice(1).map(function(m, i){
       var html = mediaHtml(m);
-      if (i === 0 && id === 'congresannecy') html = html.replace(/^<(img|video)/, '<$1 class="no-tilt"');
+      if (i === 0 && (id === 'congresannecy' || id === 'lakepub-identite')) html = html.replace(/^<(img|video)/, '<$1 class="no-tilt"');
       return html;
     }).join('');
     var paras = p.paras.map(function(t){ return '<p class="dc-body">' + esc(t) + '</p>'; }).join('');
