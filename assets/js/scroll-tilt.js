@@ -134,6 +134,7 @@
     let added = 0;
     for (const el of found) {
       if (seen.has(el)) continue;
+      if (el.classList.contains('no-tilt')) continue;
       seen.add(el);
       el.classList.add('tilt-scroll');
       const slow = projetView ? projetView.contains(el) : false;
