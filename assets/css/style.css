@@ -102,8 +102,25 @@ body, .nav, .btn, .set-row, .seg, .seg-btn, .player, .player-play, .player-side,
 }
 
 *{ box-sizing: border-box; }
-html{ scroll-behavior: auto; overflow-x: hidden; }
+html{ scroll-behavior: auto; overflow-x: hidden; scrollbar-gutter: stable; }
 html,body{ margin:0; padding:0; }
+
+/* Scrollbar aux couleurs du thème : évite le flash blanc de la piste
+   native quand la barre apparaît/disparaît au changement de page. */
+html{
+  scrollbar-width: thin;                       /* Firefox */
+  scrollbar-color: var(--border) transparent;  /* thumb / track */
+}
+::-webkit-scrollbar{ width: 10px; height: 10px; background: transparent; }
+::-webkit-scrollbar-track{ background: transparent; }
+::-webkit-scrollbar-thumb{
+  background: var(--border);
+  border-radius: 8px;
+  border: 2px solid var(--bg);                 /* marge → fond, pas de bord net */
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover{ background: var(--surface-3); background-clip: padding-box; }
+::-webkit-scrollbar-corner{ background: transparent; }
 body{
   background: var(--bg);
   color: var(--text);

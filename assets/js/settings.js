@@ -54,7 +54,7 @@
       "footer.bye": "Explorez à votre rythme. À très vite.",
       "footer.copy": "© 2026 Benjamin Hocq",
 
-      "profil.role": "Designer graphique",
+      "profil.role": "Designer graphique · Web designer",
       "profil.address": "Route de Lausanne 5, 1180 Rolle",
       "profil.license": "Permis B",
 
@@ -100,7 +100,8 @@
       "cv.lang.en": "Anglais", "cv.lang.en.level": "Intermédiaire",
       "cv.hobbies": "Hobbies",
       "cv.hobbies.body": "Activités outdoor · Investissement & immobilier · Innovation technologique · Arts visuels",
-      "cv.download": "Télécharger le CV",
+      "cv.download": "Voir le CV",
+      "cv.download.portfolio": "Voir le portfolio",
 
       "projects.title": "Projets",
       "projects.lead": "Une sélection de projets — branding, identité visuelle, web design et UX/UI — réalisés ces dernières années.",
@@ -151,7 +152,7 @@
       "footer.bye": "Take your time. See you soon.",
       "footer.copy": "© 2026 Benjamin Hocq",
 
-      "profil.role": "Graphic designer",
+      "profil.role": "Graphic designer · Web designer",
       "profil.address": "Route de Lausanne 5, 1180 Rolle",
       "profil.license": "Driving licence B",
 
@@ -197,7 +198,8 @@
       "cv.lang.en": "English", "cv.lang.en.level": "Intermediate",
       "cv.hobbies": "Interests",
       "cv.hobbies.body": "Outdoor activities · Investment & real estate · Tech innovation · Visual arts",
-      "cv.download": "Download CV",
+      "cv.download": "View CV",
+      "cv.download.portfolio": "View portfolio",
 
       "projects.title": "Projects",
       "projects.lead": "A selection of projects — branding, visual identity, web design and UX/UI — from recent years.",
@@ -251,7 +253,15 @@
   }
 
   // ── Applicateurs ──────────────────────────
-  function applyTheme() { document.documentElement.setAttribute("data-theme", state.theme); }
+  function applyTheme() {
+    document.documentElement.setAttribute("data-theme", state.theme);
+    // Boutons de téléchargement : bascule automatique du fichier selon le thème
+    var attr = state.theme === "dark" ? "data-download-dark" : "data-download-light";
+    document.querySelectorAll("[data-download-light][data-download-dark]").forEach(function (a) {
+      var f = a.getAttribute(attr);
+      if (f) a.setAttribute("href", "assets/" + f);
+    });
+  }
   function applyWidth() { document.documentElement.style.setProperty("--col", state.width + "px"); }
   function applyVolume() { if (audio) audio.volume = state.volume / 100; }
 
