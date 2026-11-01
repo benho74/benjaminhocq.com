@@ -8,7 +8,7 @@
 
   var KEY = "bh-settings";
   var DEFAULTS = {
-    theme: "dark",
+    theme: "light",
     lang: "fr",
     width: 680,
     cursor: "default",
@@ -30,13 +30,13 @@
   // ── Traductions ───────────────────────────
   var I18N = {
     fr: {
-      "nav.home": "Accueil", "nav.profile": "Profil · CV", "nav.projects": "Projets",
+      "nav.home": "Accueil", "nav.profile": "Profil · CV", "nav.projects": "Portfolio",
       "nav.contact": "Contact", "nav.settings": "Réglages",
 
       "hero.role": "Designer graphique · Web designer",
       "hero.body1": "Basé entre Genève et Lausanne, je conçois des <b>identités visuelles</b>, des <b>sites web</b> et des <b>contenus digitaux</b> depuis plusieurs années. J'ai travaillé pour des médias, des agences et des structures locales.",
       "hero.body2": "Aujourd'hui employé par un média lausannois, je pilote des projets opérationnels dans leur globalité. En parallèle, je m'investis dans des projets ambitieux qui me passionnent.",
-      "hero.cta": "Me contacter",
+      "hero.cta": "Voir le portfolio",
       "hero.available": "Disponible",
 
       "bio.kicker": "Bio",
@@ -99,11 +99,11 @@
       "cv.lang.fr": "Français", "cv.lang.fr.level": "Maternelle",
       "cv.lang.en": "Anglais", "cv.lang.en.level": "Intermédiaire",
       "cv.hobbies": "Hobbies",
-      "cv.hobbies.body": "Activités outdoor · Investissement & immobilier · Innovation technologique · Arts visuels",
+      "cv.hobbies.body": "Arts visuels · Innovation technologique · Activités outdoor · Investissement & immobilier",
       "cv.download": "Voir le CV",
       "cv.download.portfolio": "Voir le portfolio",
 
-      "projects.title": "Projets",
+      "projects.title": "Portfolio",
       "projects.lead": "Une sélection de projets — branding, identité visuelle, web design et UX/UI — réalisés ces dernières années.",
       "projets.title": "Projets",
       "projet.back": "Retour",
@@ -128,13 +128,13 @@
       "settings.reset": "Réinitialiser les réglages"
     },
     en: {
-      "nav.home": "Home", "nav.profile": "Profile · CV", "nav.projects": "Projects",
+      "nav.home": "Home", "nav.profile": "Profile · CV", "nav.projects": "Portfolio",
       "nav.contact": "Contact", "nav.settings": "Settings",
 
       "hero.role": "Graphic designer · Web designer",
       "hero.body1": "Based between Geneva and Lausanne, I have been designing <b>visual identities</b>, <b>websites</b> and <b>digital content</b> for several years. I've worked with media companies, agencies and local businesses.",
       "hero.body2": "Now working for a Lausanne-based media company, I lead operational projects end-to-end. On the side, I invest myself in ambitious projects I'm passionate about.",
-      "hero.cta": "Get in touch",
+      "hero.cta": "View portfolio",
       "hero.available": "Available",
 
       "bio.kicker": "Bio",
@@ -197,11 +197,11 @@
       "cv.lang.fr": "French", "cv.lang.fr.level": "Native",
       "cv.lang.en": "English", "cv.lang.en.level": "Intermediate",
       "cv.hobbies": "Interests",
-      "cv.hobbies.body": "Outdoor activities · Investment & real estate · Tech innovation · Visual arts",
+      "cv.hobbies.body": "Visual arts · Tech innovation · Outdoor activities · Investment & real estate",
       "cv.download": "View CV",
       "cv.download.portfolio": "View portfolio",
 
-      "projects.title": "Projects",
+      "projects.title": "Portfolio",
       "projects.lead": "A selection of projects — branding, visual identity, web design and UX/UI — from recent years.",
       "projets.title": "Projects",
       "projet.back": "Back",

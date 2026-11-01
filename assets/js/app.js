@@ -299,7 +299,7 @@
         'Nom : ' + name + '\n' +
         'Email : ' + email + '\n\n' +
         message;
-      var href = 'mailto:benjamin.hocq@outlook.com'
+      var href = 'mailto:contact@benjaminhocq.com'
         + '?subject=' + encodeURIComponent(subject)
         + '&body=' + encodeURIComponent(body);
       window.location.href = href;

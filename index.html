@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
       try{
         var s = JSON.parse(localStorage.getItem("bh-settings") || "{}");
         var r = document.documentElement;
-        r.setAttribute("data-theme", s.theme || "dark");
+        r.setAttribute("data-theme", s.theme || "light");
         r.setAttribute("data-cursor", s.cursor || "default");
         if (s.lang) r.setAttribute("lang", s.lang);
         if (s.width) r.style.setProperty("--col", s.width + "px");
@@ -40,8 +40,8 @@
       <span class="tip" data-i18n="nav.profile">Profil · CV</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-5.5 7-5.5s7 1.9 7 5.5"/></svg>
     </a>
-    <a data-view="projets" aria-label="Projets">
-      <span class="tip" data-i18n="nav.projects">Projets</span>
+    <a data-view="projets" aria-label="Portfolio">
+      <span class="tip" data-i18n="nav.projects">Portfolio</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></svg>
     </a>
     <a data-view="contact" aria-label="Contact">
@@ -80,7 +80,7 @@
             dans leur globalité. En parallèle, je m'investis dans des projets ambitieux
             qui me passionnent.
           </p>
-          <button class="btn" data-view="contact"><span id="hero-btn-text" data-i18n="hero.cta">Me contacter</span>
+          <button class="btn" data-view="projets"><span id="hero-btn-text" data-i18n="hero.cta">Voir le portfolio</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
         </div>
@@ -220,7 +220,7 @@
         <footer class="footer">
           <div class="socials">
             <a class="soc-btn" href="tel:+41772813052" data-i18n-aria="contact.phone" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
-            <a class="soc-btn" href="mailto:benjamin.hocq@outlook.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
+            <a class="soc-btn" href="mailto:contact@benjaminhocq.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
             <a class="soc-btn" href="https://www.linkedin.com/in/benjamin-hocq-b3a06114b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
           </div>
           <div class="signature">
@@ -247,7 +247,7 @@
             <h1>Benjamin Hocq</h1>
             <p class="role" data-i18n="profil.role">Designer graphique · Web designer</p>
             <div class="contact-grid">
-              <a href="mailto:benjamin.hocq@outlook.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg> benjamin.hocq@outlook.com</a>
+              <a href="mailto:contact@benjaminhocq.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg> contact@benjaminhocq.com</a>
               <a href="tel:+41772813052"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +41 77 281 30 52</a>
               <a href="https://www.benjaminhocq.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg> Portfolio · benjaminhocq.com</a>
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> <span data-i18n="profil.address">Route de Lausanne 5, 1180 Rolle</span></span>
@@ -372,7 +372,7 @@
 
         <div class="block">
           <p class="cv-label" data-i18n="cv.hobbies">Hobbies</p>
-          <p class="about" data-i18n="cv.hobbies.body">Activités outdoor · Investissement &amp; immobilier · Innovation technologique · Arts visuels</p>
+          <p class="about" data-i18n="cv.hobbies.body">Arts visuels · Innovation technologique · Activités outdoor · Investissement &amp; immobilier</p>
         </div>
 
         <div class="block" style="display:flex; gap:12px; flex-wrap:wrap;">
@@ -384,9 +384,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
           </a>
           <a class="btn"
-             data-download-light="Benjamin Hocq - Portfolio - clair.pdf"
-             data-download-dark="Benjamin Hocq - Portfolio.pdf"
-             href="assets/Benjamin Hocq - Portfolio.pdf" target="_blank" rel="noopener">
+             data-view="projets" href="#projets">
             <span data-i18n="cv.download.portfolio">Voir le portfolio</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
           </a>
@@ -398,7 +396,7 @@
     <!-- ════════════════════ PROJETS ════════════════════ -->
     <section class="view" id="view-projets">
       <div class="feed" data-screen-label="Projets">
-        <h2 class="sec-title" data-i18n="projects.title">Projets</h2>
+        <h2 class="sec-title" data-i18n="projects.title">Portfolio</h2>
         <p class="sec-lead" data-i18n="projects.lead">Une sélection de projets — branding, identité visuelle, web design et UX/UI — réalisés ces dernières années.</p>
 
         <div class="proj-cards" id="proj-list"></div>
@@ -424,9 +422,9 @@
         <p class="sec-lead" data-i18n="contact.lead">Un projet, une question, ou juste envie de dire bonjour ? Écrivez-moi.</p>
 
         <div class="links">
-          <a class="link-row" href="mailto:benjamin.hocq@outlook.com">
+          <a class="link-row" href="mailto:contact@benjaminhocq.com">
             <span class="lr-k" data-i18n="contact.email">Email</span>
-            <span class="lr-v">benjamin.hocq@outlook.com <span class="arr">↗</span></span>
+            <span class="lr-v">contact@benjaminhocq.com <span class="arr">↗</span></span>
           </a>
           <a class="link-row" href="tel:+41772813052">
             <span class="lr-k" data-i18n="contact.phone">Téléphone</span>
@@ -457,7 +455,7 @@
         <footer class="footer">
           <div class="socials">
             <a class="soc-btn" href="tel:+41772813052" data-i18n-aria="contact.phone" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 0 0 6 6l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
-            <a class="soc-btn" href="mailto:benjamin.hocq@outlook.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
+            <a class="soc-btn" href="mailto:contact@benjaminhocq.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></a>
             <a class="soc-btn" href="https://www.linkedin.com/in/benjamin-hocq-b3a06114b/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></a>
           </div>
           <div class="signature">Benjamin Hocq</div>
